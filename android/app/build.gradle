@@ -43,6 +43,21 @@ android {
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
     }
+     flavorDimensions "default"
+
+productFlavors {
+    production {
+        dimension "default"
+        resValue "string", "app_name", "Task Manager App"
+    }
+
+    development {
+        dimension "default"
+        resValue "string", "app_name", "Task Manager App Dev"
+        applicationIdSuffix ".dev"
+
+}
+}
 
     buildTypes {
         release {
