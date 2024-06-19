@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "158766218795",
+    "project_id": "cool-maids-task-manager",
+    "storage_bucket": "cool-maids-task-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158766218795:android:0da21358eaa952e927f46e",
+        "android_client_info": {
+          "package_name": "com.example.task_manager_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP47orXfBJ0_PVvd3AX91GR4PVeMWzoYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158766218795:android:af5cfcb13290360f27f46e",
+        "android_client_info": {
+          "package_name": "com.example.task_manager_app.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP47orXfBJ0_PVvd3AX91GR4PVeMWzoYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

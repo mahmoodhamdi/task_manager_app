@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -43,17 +46,17 @@ android {
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
     }
-     flavorDimensions "default"
+        flavorDimensions "default"
 
 productFlavors {
     production {
         dimension "default"
-        resValue "string", "app_name", "Task Manager App"
+        resValue "string", "app_name", "Task Manager"
     }
 
     development {
         dimension "default"
-        resValue "string", "app_name", "Task Manager App Dev"
+        resValue "string", "app_name", "Task Manager Dev"
         applicationIdSuffix ".dev"
 
 }
@@ -70,4 +73,13 @@ productFlavors {
 
 flutter {
     source = "../.."
+}
+configurations.all {
+    resolutionStrategy {
+        eachDependency {
+            if ((requested.group == "org.jetbrains.kotlin") && (requested.name.startsWith("kotlin-stdlib"))) {
+                useVersion("1.8.22")
+            }
+        }
+    }
 }
