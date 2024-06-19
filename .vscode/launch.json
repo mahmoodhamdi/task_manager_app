@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0"
+,
+    "configurations": [
+
+        {
+            "name": "Task Manager Development",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main_development.dart",
+             "args": ["--flavor",  "Development","--target", "lib/main_development.dart" ],
+        },
+        {
+            "name": "Task Manager Production",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main_production.dart",
+             "args": [ "--flavor", "Production","--target", "lib/main_production.dart" ],
+             
+        }
+    ]   
+}
