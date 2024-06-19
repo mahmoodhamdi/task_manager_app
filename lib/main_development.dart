@@ -5,3 +5,5 @@ void main() {
   runApp(const TaskManagerApp());
 }
 
+// flutter run --release -t lib/main_development.dart --flavor development
+// flutter build apk --flavor development -t lib/main_development.dart
