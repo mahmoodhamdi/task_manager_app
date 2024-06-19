@@ -11,7 +11,7 @@ platform :android do
     testers:"hmdy7486@gmail.com",
     android_artifact_type:"APK",
     android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-    firebase_cli_token:"1//03-eFlVUkpWyGCgYIARAAGAMSNwF-L9IrEzCqQUK6570l2lQfEfaVnOYD_nqkGnPgGRodr9HsD44KPgpEVQ16Zw-TZdhvP7K2-bc" ,
-  )
+    firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"]
+    )
   end
 end
