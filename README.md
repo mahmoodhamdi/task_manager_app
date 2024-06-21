@@ -1,11 +1,16 @@
 # Task Manager App
 
-
 ## Description
 
 Task Manager App is a Flutter application designed to help users manage their tasks efficiently. It includes features for user authentication, task CRUD operations, pagination for fetching tasks, robust state management, local storage using Flutter's capabilities, and comprehensive unit tests.
 
 ## 🌟 Features Overview
+
+- [x] 🔄 **CI/CD Setup**  
+      Integrated CI/CD pipeline using GitHub Actions and Fastlane for automated builds and deployments.
+
+- [x] 🎨 **Flavors**  
+      Utilizes flavors to manage different environments such as Development and Production.
 
 - [ ] 🔑 **User Authentication**  
       Secure user login using Username and Password.
@@ -25,13 +30,19 @@ Task Manager App is a Flutter application designed to help users manage their ta
 - [ ] 🧪 **Unit Tests**  
       Comprehensive tests covering critical functionalities.
 
-- [x] 🔄 **CI/CD Setup**  
-      Integrated CI/CD pipeline using GitHub Actions and Fastlane for automated builds and deployments.
+- [ ] ⚙️ **Settings**  
+      Manage user preferences and application settings.
 
-- [x] 🎨 **Flavors**  
-      Utilizes flavors to manage different environments such as Development and Production.
+- [ ] 📩 **Notifications**  
+      Handle notifications and alerts for users.
 
 ## Key Features
+
+### CI/CD Setup
+
+- [x] **GitHub Actions**: Automates continuous integration and deployment pipelines.
+- [x] **Fastlane Integration**: Automates build, testing, and release processes for different environments.
+- [x] **Flavors**: Configures distinct app variants for various deployment environments.
 
 ### User Authentication
 
@@ -57,11 +68,13 @@ Task Manager App is a Flutter application designed to help users manage their ta
 
 - [ ] Comprehensive unit tests ensuring app functionality and stability.
 
-### CI/CD Setup
+### Settings
 
-- [x] **GitHub Actions**: Automates continuous integration and deployment pipelines.
-- [x] **Fastlane Integration**: Automates build, testing, and release processes for different environments.
-- [x] **Flavors**: Configures distinct app variants for various deployment environments.
+- [ ] **Manage user preferences and application settings.**
+
+### Notifications
+
+- [ ] **Handle notifications and alerts for users.**
 
 ## Project Structure
 
