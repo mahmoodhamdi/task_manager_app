@@ -17,7 +17,26 @@ class OnboardingView extends StatefulWidget {
 }
 
 class _OnboardingViewState extends State<OnboardingView> {
-  PageController controller = PageController();
+  late PageController controller;
+  late ValueNotifier<int> pageIndexNotifier;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = PageController();
+    pageIndexNotifier =
+        ValueNotifier<int>(0); // Initialize with initial page index
+    controller.addListener(() {
+      pageIndexNotifier.value = controller.page!.round();
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    pageIndexNotifier.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,33 +70,45 @@ class _OnboardingViewState extends State<OnboardingView> {
                   pageController: controller,
                 ),
                 verticalSpace(50.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButtonWidget(
-                      text: AppStrings.back,
-                      onPressed: () {
-                        setState(() {
-                          controller.previousPage(
-                              duration: duration, curve: Curves.easeInOut);
-                        });
-                      },
-                    ),
-                    ButtonWidget(
-                      text: AppStrings.next,
-                      onTap: () {
-                        if (controller.page != 2) {
-                          setState(() {
-                            controller.nextPage(
-                                duration: duration, curve: Curves.easeInOut);
-                          });
-                        } else {
-                          Navigator.pushReplacementNamed(
-                              context, Routes.welcomeView);
-                        }
-                      },
-                    )
-                  ],
+                ValueListenableBuilder<int>(
+                  valueListenable: pageIndexNotifier,
+                  builder: (context, pageIndex, child) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButtonWidget(
+                          text: AppStrings.back,
+                          onPressed: () {
+                            setState(() {
+                              controller.previousPage(
+                                duration: duration,
+                                curve: Curves.easeInOut,
+                              );
+                            });
+                          },
+                        ),
+                        ButtonWidget(
+                          text: pageIndex == 2
+                              ? AppStrings.getStarted
+                              : AppStrings.next,
+                          width: pageIndex == 2 ? 151.0.w : null,
+                          onTap: () {
+                            if (pageIndex != 2) {
+                              setState(() {
+                                controller.nextPage(
+                                  duration: duration,
+                                  curve: Curves.easeInOut,
+                                );
+                              });
+                            } else {
+                              Navigator.pushReplacementNamed(
+                                  context, Routes.welcomeView);
+                            }
+                          },
+                        )
+                      ],
+                    );
+                  },
                 ),
               ],
             ),
