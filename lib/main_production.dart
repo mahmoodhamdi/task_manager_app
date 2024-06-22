@@ -4,6 +4,8 @@ import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/task_manager_app.dart';
 
 void main()async {
+    WidgetsFlutterBinding.ensureInitialized();
+
    setupServiceLocator();
  await ScreenUtil.ensureScreenSize();
   runApp(const TaskManagerApp());

@@ -36,6 +36,9 @@ Task Manager App is a Flutter application designed to help users manage their ta
 - [ ] 📩 **Notifications**  
       Handle notifications and alerts for users.
 
+- [x] 📝 **Onboarding**  
+      Guide users through the app features with an interactive onboarding experience.
+
 ## Key Features
 
 ### CI/CD Setup
@@ -76,6 +79,11 @@ Task Manager App is a Flutter application designed to help users manage their ta
 
 - [ ] **Handle notifications and alerts for users.**
 
+### Onboarding
+
+- [x] **Interactive Onboarding**: Guide users through the app features with an engaging and informative onboarding experience.
+- [x] **Page View and Dots Indicator**: Smooth transitions and visual indicators for better user orientation during onboarding.
+
 ## Recent Changes
 
 ### Initial Project Setup and Configuration
@@ -90,18 +98,14 @@ Task Manager App is a Flutter application designed to help users manage their ta
 - **Service Locator**: Set up a service locator for dependency injection.
 - **App Routes**: Created and configured application routes.
 - **Error Handling**: Added comprehensive error handling with platform, format, Firebase, and Dio exceptions.
+- **ScreenUtil Integration**: Integrated flutter_screenutil for responsive design.
 
-### App Themes
+### Onboarding Feature
 
-- **Dark Mode**: Updated AppThemes to enforce a consistent dark mode experience across the app.
-  - Custom input decorations for dark mode.
-  - Styled buttons, dividers, and color schemes.
-  - Integrated modern snackbar and dialog themes for professional look and feel.
-
-### Responsive Sizing
-
-- **AppSizes**: Defined sizes for padding, margins, icons, fonts, buttons, and more.
-  - Applied responsive sizing using flutter_screenutil to adapt to various screen sizes.
+- **App Images**: Added SVG images for onboarding.
+- **App Strings**: Defined consistent strings for the app.
+- **Onboarding View**: Implemented onboarding view with page view for structured user guidance.
+- **Onboarding Dots Indicator**: Created an onboarding dots indicator for visual pagination during onboarding.
 
 ## Project Structure
 
@@ -110,11 +114,13 @@ lib/
   |- core/
   |  |-services/
   |  |  |- api_service.dart
+  |  |  
   |  |- themes/
-  |  |  |- app_theme.dart
-  |  |  |- text_themes.dart
+  |  |  |- app_text_themes.dart
+  |  |  
   |  |- validators/
   |  |  |- validation.dart
+  |  |  
   |  |- utils/
   |  |  |- logger.dart
   |  |
@@ -122,10 +128,12 @@ lib/
   |  |  |- service_locator.dart
   |  |
   |  |- constants/
-  |  |  |- image_strings.dart
-  |  |  |- app_sizes.dart
+  |  |  |- app_images.dart
+  |  |  |- app_strings.dart
+  |  |  |- app_constants.dart
   |  |  |- app_enums.dart
   |  |  |- app_colors.dart
+  |  |  |- api_constants.dart
   |
   |- features/
   |  |- authentication/
@@ -167,10 +175,17 @@ lib/
   |  |  |- data/
   |  |  |  |- repos/
   |  |  |  |- models/
+  |  |
+  |  |- onboarding/
+  |  |  |- views/
+  |  |  |- view_models/
+  |  |  |- widgets/
+  |  |  |- logic/
+  |  |  |  |- cubits/
   |
+  |- task_manager_app.dart
   |- main_production.dart
   |- main_development.dart
-
 ```
 
 ## Evaluation Criteria
@@ -186,3 +201,4 @@ Candidates will be evaluated based on:
 ## Submission
 
 Candidates are required to submit their completed Flutter project within 3 days on a version control platform like GitHub. Include clear instructions for building and running the app. Additionally, provide a brief README outlining design decisions, challenges faced, and any additional features implemented.
+
