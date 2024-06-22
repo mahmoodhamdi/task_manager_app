@@ -32,7 +32,9 @@ jobs:
 
       - name: Get Latest Commit Message
         id: get_commit_message
-        run: echo "RELEASE_NOTES=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+        run: |
+          echo "$(git log -1 --pretty=%B)" > commit_message.txt
+          echo "RELEASE_NOTES=$(cat commit_message.txt)" >> $GITHUB_ENV
 
       - name: Flutter Build Android App And Upload To Firebase
         env:
