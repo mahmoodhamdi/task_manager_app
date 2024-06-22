@@ -7,8 +7,8 @@ platform :android do
   sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons"
   firebase_app_distribution(
     app: "1:158766218795:android:0da21358eaa952e927f46e",
-    release_notes: "Welcome to FlutterFire. This is the release notes.",
-    testers:"hmdy7486@gmail.com",
+    release_notes: release_notes,
+    testers:"hmdy7486@gmail.com,hmdy74867486@gmail.com,mahmoud21-02064@student.eelu.edu.eg",
     android_artifact_type:"APK",
     android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
     firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"]
