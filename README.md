@@ -76,29 +76,56 @@ Task Manager App is a Flutter application designed to help users manage their ta
 
 - [ ] **Handle notifications and alerts for users.**
 
+## Recent Changes
+
+### Initial Project Setup and Configuration
+
+- **Firebase Integration**: Added fingerprint SHA for Firebase authentication.
+- **Android Configuration**: Updated minSdkVersion to 23.
+- **Assets and Packages**: Configured assets and added necessary packages.
+- **Route Extensions and Spacing Widgets**: Implemented custom route extensions and spacing widgets for consistent UI spacing.
+- **Native Splash Screen and Launcher Icon**: Set up a native splash screen and custom launcher icon for branding.
+- **Text Themes**: Defined custom text themes for consistent typography across the app.
+- **ScreenUtil Integration**: Integrated flutter_screenutil for responsive design.
+- **Service Locator**: Set up a service locator for dependency injection.
+- **App Routes**: Created and configured application routes.
+- **Error Handling**: Added comprehensive error handling with platform, format, Firebase, and Dio exceptions.
+
+### App Themes
+
+- **Dark Mode**: Updated AppThemes to enforce a consistent dark mode experience across the app.
+  - Custom input decorations for dark mode.
+  - Styled buttons, dividers, and color schemes.
+  - Integrated modern snackbar and dialog themes for professional look and feel.
+
+### Responsive Sizing
+
+- **AppSizes**: Defined sizes for padding, margins, icons, fonts, buttons, and more.
+  - Applied responsive sizing using flutter_screenutil to adapt to various screen sizes.
+
 ## Project Structure
 
 ```
 lib/
   |- core/
+  |  |-services/
+  |  |  |- api_service.dart
   |  |- themes/
   |  |  |- app_theme.dart
-  |  |  |- theme_colors.dart
-  |  |  |- theme_typography.dart
-  |  |
+  |  |  |- text_themes.dart
+  |  |- validators/
+  |  |  |- validation.dart
   |  |- utils/
-  |  |  |- services/
-  |  |  |  |- api_service.dart
-  |  |  |  |- analytics_service.dart
-  |  |  |- date_time_utils.dart
   |  |  |- logger.dart
   |  |
   |  |- di/
   |  |  |- service_locator.dart
   |  |
   |  |- constants/
-  |  |  |- app_constants.dart
-  |  |  |- api_constants.dart
+  |  |  |- image_strings.dart
+  |  |  |- app_sizes.dart
+  |  |  |- app_enums.dart
+  |  |  |- app_colors.dart
   |
   |- features/
   |  |- authentication/
