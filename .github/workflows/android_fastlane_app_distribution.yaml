@@ -33,13 +33,11 @@ jobs:
       - name: Get Latest Commit Message
         id: get_commit_message
         run: |
-          echo "$(git log -1 --pretty=%B)" > commit_message.txt
-          echo "RELEASE_NOTES=$(cat commit_message.txt)" >> $GITHUB_ENV
+          git log -1 --pretty=%B > commit_message.txt
 
       - name: Flutter Build Android App And Upload To Firebase
         env:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
-          RELEASE_NOTES: ${{ env.RELEASE_NOTES }}
         run: |
-          bundle exec fastlane android firebase_distribution release_notes:"$RELEASE_NOTES"
+          RELEASE_NOTES=$(<commit_message.txt) bundle exec fastlane android firebase_distribution release_notes:"$RELEASE_NOTES"
         working-directory: android
