@@ -1,30 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:task_manager_app/core/constants/app_colors.dart';
+import 'package:task_manager_app/core/constants/app_images.dart';
+import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
 
-class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({
+class AppButtonWidget extends StatelessWidget {
+  const AppButtonWidget({
     super.key,
-    this.onTap,
     required this.text,
     this.backgroundColor,
-    this.textColor,
     this.borderColor,
     this.borderRadius,
     this.width,
     this.height,
     this.textStyle,
+    this.hideIcon,
+    this.iconHeight,
+    this.iconWidth,
+    this.iconColor,
+    this.iconPath,
+    this.onTap,
   });
   final void Function()? onTap;
   final String text;
   final Color? backgroundColor;
-  final Color? textColor;
   final Color? borderColor;
   final double? borderRadius;
   final double? width;
   final double? height;
   final TextStyle? textStyle;
+  final bool? hideIcon;
+  final double? iconHeight;
+  final double? iconWidth;
+  final Color? iconColor;
+  final String? iconPath;
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +53,22 @@ class ButtonWidget extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: textStyle ?? AppTextThemes.font16WhiteRegular,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              hideIcon != true
+                  ? const SizedBox.shrink()
+                  : SvgPicture.asset(
+                      iconPath ?? AppImages.google,
+                      width: iconWidth ?? 24.w,
+                      height: iconHeight ?? 24.h,
+                    ),
+              horizontalSpace(8.w),
+              Text(
+                text,
+                style: textStyle ?? AppTextThemes.font16WhiteRegular,
+              ),
+            ],
           ),
         ),
       ),
