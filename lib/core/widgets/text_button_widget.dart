@@ -4,7 +4,10 @@ import 'package:task_manager_app/core/themes/app_text_themes.dart';
 
 class TextButtonWidget extends StatelessWidget {
   const TextButtonWidget({
-    super.key, this.text, this.onPressed, this.textStyle,
+    super.key,
+    this.text,
+    this.onPressed,
+    this.textStyle,
   });
   final String? text;
   final void Function()? onPressed;
@@ -13,7 +16,7 @@ class TextButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed:  onPressed,
+        onPressed: onPressed,
         child: Text(
           text ?? AppStrings.skip,
           style: textStyle ?? AppTextThemes.font16LightWhiteRegular,

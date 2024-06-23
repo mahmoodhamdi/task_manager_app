@@ -23,6 +23,7 @@ class AppImages {
   static const String universityCategory =
       'assets/svgs/university_category.svg';
   static const String workCategory = 'assets/svgs/work_category.svg';
+
   static const List<String> categoriesList = [
     homeCategory,
     workCategory,
@@ -40,4 +41,5 @@ class AppImages {
     onboarding2,
     onboarding3
   ];
+  static const String divider = 'assets/svgs/Divider.svg';
 }
