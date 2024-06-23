@@ -2,14 +2,12 @@ default_platform(:android)
 
 platform :android do
   desc "Lane For Android FireBase Distribution"
-  lane :firebase_distribution do |options|
-    release_notes = options[:release_notes] || "Default release notes"
-
+  lane :firebase_distribution do
     sh "flutter clean"
     sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons"
     firebase_app_distribution(
       app: "1:158766218795:android:0da21358eaa952e927f46e",
-      release_notes: release_notes,
+      release_notes: "Added Onboarding Feature, Updated README",
       testers: "hmdy7486@gmail.com,hmdy74867486@gmail.com,mahmoud21-02064@student.eelu.edu.eg",
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
