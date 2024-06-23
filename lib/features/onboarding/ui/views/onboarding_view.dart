@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_strings.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
-import 'package:task_manager_app/core/widgets/button_widget.dart';
+import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/text_button_widget.dart';
 import 'package:task_manager_app/features/onboarding/ui/widgets/on_boarding_dot_navigation.dart';
 import 'package:task_manager_app/features/onboarding/ui/widgets/onboarding_page_view.dart';
@@ -47,7 +47,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             children: [
               Positioned.fill(
                 top: 56.0.h,
-                 child: OnboardingPageView(
+                child: OnboardingPageView(
                   pageController: controller,
                 ),
               ),
@@ -87,7 +87,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                     return Positioned(
                       bottom: 0.0.h,
                       right: 0.0.w,
-                      child: ButtonWidget(
+                      child: AppButtonWidget(
                         text: pageIndexNotifier.value == 2
                             ? AppStrings.getStarted
                             : AppStrings.next,
