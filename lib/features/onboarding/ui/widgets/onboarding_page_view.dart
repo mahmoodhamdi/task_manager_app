@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:task_manager_app/core/constants/app_images.dart';
 import 'package:task_manager_app/core/constants/app_strings.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
+import 'package:task_manager_app/core/utils/utils.dart';
 
 class OnboardingPageView extends StatelessWidget {
   const OnboardingPageView({
@@ -21,24 +21,30 @@ class OnboardingPageView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                  width: 277.w,
-                  height: 277.h,
+                  width: Utils.screenWidth(context) * .5,
+                  height: Utils.screenHeight(context) * .3,
                   AppImages.onboardingImagesList[index]),
-              verticalSpace(51.0),
               Text(
+                maxLines: 1,
                 AppStrings.onBoardingTitlesList[index],
-                style: AppTextThemes.font32WhiteBold,
+                style: AppTextThemes.font28WhiteBold,
               ),
-              verticalSpace(42.0),
-              Text(
-                maxLines: 2,
-                AppStrings.onBoardingSubTitlesList[index],
-                style: AppTextThemes.font16WhiteRegular,
-              ),
-              verticalSpace(8.0),
-              Text(
-                AppStrings.onBoardingSubTitlesList2[index],
-                style: AppTextThemes.font16WhiteRegular,
+              verticalSpace(16.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    maxLines: 1,
+                    AppStrings.onBoardingSubTitlesList[index],
+                    style: AppTextThemes.font14WhiteRegular,
+                  ),
+                  verticalSpace(8.0),
+                  Text(
+                    maxLines: 1,
+                    AppStrings.onBoardingSubTitlesList2[index],
+                    style: AppTextThemes.font14WhiteRegular,
+                  ),
+                ],
               ),
             ],
           );
