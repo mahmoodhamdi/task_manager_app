@@ -2,7 +2,7 @@ class AppStrings {
   // -- OnBoarding Texts
   static const String onBoardingTitle1 = "Manage your tasks";
   static const String onBoardingTitle2 = "Create daily routine";
-  static const String onBoardingTitle3 = "Orgonaize your tasks";
+  static const String onBoardingTitle3 = "Organize your tasks";
   static const List<String> onBoardingTitlesList = [
     onBoardingTitle1,
     onBoardingTitle2,

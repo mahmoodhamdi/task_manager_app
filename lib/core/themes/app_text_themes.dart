@@ -10,8 +10,13 @@ class AppTextThemes {
     color: Colors.black,
   );
 
-  static TextStyle font32WhiteBold =  TextStyle(
+  static TextStyle font32WhiteBold = TextStyle(
     fontSize: 32.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.white,
+  );
+  static TextStyle font28WhiteBold = TextStyle(
+    fontSize: 28.sp,
     fontWeight: FontWeightHelper.bold,
     color: AppColors.white,
   );
@@ -99,8 +104,13 @@ class AppTextThemes {
     fontWeight: FontWeightHelper.medium,
     color: AppColors.darkBlue,
   );
-  static TextStyle font16WhiteRegular =   TextStyle(
+  static TextStyle font16WhiteRegular = TextStyle(
     fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.white,
+  );
+  static TextStyle font14WhiteRegular = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
     color: Colors.white,
   );
