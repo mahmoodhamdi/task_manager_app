@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager_app/features/authentication/ui/views/login_view.dart';
 import 'package:task_manager_app/features/authentication/ui/views/register_view.dart';
+import 'package:task_manager_app/features/home/ui/views/home_view.dart';
 import 'package:task_manager_app/features/onboarding/ui/views/onboarding_view.dart';
 
 class Routes {
@@ -26,6 +27,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case loginView:
         return MaterialPageRoute(builder: (_) => const LoginView());
+      case homeView:
+        return MaterialPageRoute(builder: (_) => const HomeView());
       default:
         // error page
         return MaterialPageRoute(
