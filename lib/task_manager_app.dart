@@ -7,15 +7,16 @@ class TaskManagerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Task Manager App',
-        theme: ThemeData.dark(),
-        initialRoute: Routes.onboarding,
-        onGenerateRoute: Routes.generateRoute,
-      ),
-    );
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Task Manager App',
+            theme: ThemeData.dark(),
+            initialRoute: Routes.onboarding,
+            onGenerateRoute: Routes.generateRoute,
+          );
+        });
   }
 }

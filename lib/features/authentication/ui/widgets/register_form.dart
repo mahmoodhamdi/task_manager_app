@@ -5,10 +5,8 @@ import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_text_form_field.dart';
 
 class RegisterForm extends StatelessWidget {
-  const RegisterForm({
-    super.key,
-  });
-//register_form.dart
+  const RegisterForm({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Form(
