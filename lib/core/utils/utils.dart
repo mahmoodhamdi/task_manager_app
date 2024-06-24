@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:task_manager_app/core/constants/app_colors.dart';
 import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
@@ -48,11 +49,11 @@ class Utils {
   static Color _getSnackBarColor(SnackBarType type) {
     switch (type) {
       case SnackBarType.error:
-        return Colors.red;
+        return AppColors.error;
       case SnackBarType.success:
-        return Colors.green;
+        return AppColors.success;
       case SnackBarType.info:
-        return Colors.blue;
+        return AppColors.primaryColor;
       default:
         return Colors.black;
     }
