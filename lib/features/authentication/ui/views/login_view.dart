@@ -10,7 +10,6 @@ import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_divider_widget.dart';
 import 'package:task_manager_app/features/authentication/ui/widgets/login_form.dart';
-import 'package:task_manager_app/features/authentication/ui/widgets/register_form.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
