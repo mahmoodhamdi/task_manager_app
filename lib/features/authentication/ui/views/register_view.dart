@@ -37,13 +37,13 @@ class RegisterView extends StatelessWidget {
                       if (state is GoogleSignInFailure) {
                         Utils.showSnackBar(
                             context,
-                            'Sign-In Failed: ${state.error}',
+                            'Register Failed: ${state.error}',
                             SnackBarType.error);
                       } else if (state is GoogleSignInSuccess) {
-                        Utils.showSnackBar(context, 'Sign-In Successful!',
+                        Utils.showSnackBar(context, 'Email Created Successfully!',
                             SnackBarType.success);
                         Navigator.pushNamedAndRemoveUntil(
-                            context, Routes.loginView, (route) => false);
+                            context, Routes.homeView, (route) => false);
                       }
                     },
                     builder: (context, state) {
