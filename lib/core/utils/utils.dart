@@ -18,7 +18,9 @@ class Utils {
         children: [
           Icon(_getSnackBarIcon(type), color: Colors.white),
           horizontalSpace(8),
-          Text(message),
+          Expanded(
+            child: Text(message),
+          ),
         ],
       ),
       backgroundColor: _getSnackBarColor(type),

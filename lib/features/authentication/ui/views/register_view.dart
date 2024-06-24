@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/constants/app_colors.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
@@ -9,6 +10,8 @@ import 'package:task_manager_app/core/themes/app_text_themes.dart';
 import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_divider_widget.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_state.dart';
 import 'package:task_manager_app/features/authentication/ui/widgets/register_form.dart';
 
 class RegisterView extends StatelessWidget {
@@ -27,16 +30,42 @@ class RegisterView extends StatelessWidget {
                 verticalSpace(16),
                 const AppDividerWidget(),
                 verticalSpace(24),
-                AppButtonWidget(
-                  hideIcon: true,
-                  text: 'Register with Google',
-                  onTap: () {},
-                  width: double.infinity,
-                  textStyle: AppTextThemes.font16WhiteRegular.copyWith(
-                    color: AppColors.white.withOpacity(0.87),
+                BlocProvider(
+                  create: (context) => GoogleSignInCubit(),
+                  child: BlocConsumer<GoogleSignInCubit, GoogleSignInState>(
+                    listener: (context, state) {
+                      if (state is GoogleSignInFailure) {
+                        Utils.showSnackBar(
+                            context,
+                            'Sign-In Failed: ${state.error}',
+                            SnackBarType.error);
+                      } else if (state is GoogleSignInSuccess) {
+                        Utils.showSnackBar(context, 'Sign-In Successful!',
+                            SnackBarType.success);
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, Routes.loginView, (route) => false);
+                      }
+                    },
+                    builder: (context, state) {
+                      if (state is GoogleSignInLoading) {
+                        return const CircularProgressIndicator();
+                      }
+
+                      return AppButtonWidget(
+                        hideIcon: true,
+                        text: 'Register with Google',
+                        onTap: () {
+                          context.read<GoogleSignInCubit>().signInWithGoogle();
+                        },
+                        width: double.infinity,
+                        textStyle: AppTextThemes.font16WhiteRegular.copyWith(
+                          color: AppColors.white.withOpacity(0.87),
+                        ),
+                        backgroundColor: AppColors.black,
+                        borderColor: AppColors.primaryColor,
+                      );
+                    },
                   ),
-                  backgroundColor: AppColors.black,
-                  borderColor: AppColors.primaryColor,
                 ),
                 verticalSpace(16),
                 AppButtonWidget(
