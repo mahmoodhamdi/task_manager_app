@@ -12,7 +12,20 @@
           "package_name": "com.example.task_manager_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "158766218795-usma921tvgo2qd4h2vh2nuohan2ckt10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.task_manager_app",
+            "certificate_hash": "9299fa40bbe25794f8579dc768d1f78d721a2ff4"
+          }
+        },
+        {
+          "client_id": "158766218795-ftkago44ctsnh0b6ctk3fd824kftk1g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBP47orXfBJ0_PVvd3AX91GR4PVeMWzoYU"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158766218795-3euu4c139o3lf6qsc4k50ce8r4pmaahe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "158766218795-ke1m55stcltfs6mefouac71l8f05rcua.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.taskManagerApp"
+              }
+            }
+          ]
         }
       }
     },
@@ -31,7 +56,20 @@
           "package_name": "com.example.task_manager_app.dev"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "158766218795-oiqtdlomtmk5boeak2j622ckggonduu2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.task_manager_app.dev",
+            "certificate_hash": "9299fa40bbe25794f8579dc768d1f78d721a2ff4"
+          }
+        },
+        {
+          "client_id": "158766218795-ftkago44ctsnh0b6ctk3fd824kftk1g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBP47orXfBJ0_PVvd3AX91GR4PVeMWzoYU"
@@ -39,7 +77,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158766218795-3euu4c139o3lf6qsc4k50ce8r4pmaahe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "158766218795-ke1m55stcltfs6mefouac71l8f05rcua.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.taskManagerApp"
+              }
+            }
+          ]
         }
       }
     }
