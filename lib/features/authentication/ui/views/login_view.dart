@@ -10,8 +10,8 @@ import 'package:task_manager_app/core/themes/app_text_themes.dart';
 import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_divider_widget.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_cubit.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_state.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_state.dart';
 import 'package:task_manager_app/features/authentication/ui/widgets/login_form.dart';
 
 class LoginView extends StatelessWidget {
