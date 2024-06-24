@@ -49,19 +49,19 @@ class _OnboardingViewState extends State<OnboardingView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButtonWidget(
-                    text: AppStrings.skip,
+                    text: AppStrings.back,
                     onPressed: () {
-                      controller.animateToPage(
-                        2,
+                      controller.previousPage(
                         duration: duration,
                         curve: Curves.easeInOut,
                       );
                     },
                   ),
                   TextButtonWidget(
-                    text: AppStrings.back,
+                    text: AppStrings.skip,
                     onPressed: () {
-                      controller.previousPage(
+                      controller.animateToPage(
+                        2,
                         duration: duration,
                         curve: Curves.easeInOut,
                       );
