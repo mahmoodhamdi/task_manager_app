@@ -12,16 +12,17 @@ class OnboardingDotIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SmoothPageIndicator(
-        controller: pageController,
-        count: 3,
-        axisDirection: Axis.horizontal,
-        onDotClicked: (index) {
-          pageController.jumpToPage(index);
-        },
-        effect: ExpandingDotsEffect(
-          dotHeight: 4.0.h,
-          dotWidth: 26.28.w,
-          activeDotColor: AppColors.white,
-        ));
+      controller: pageController,
+      count: 3,
+      axisDirection: Axis.horizontal,
+      onDotClicked: (index) {
+        pageController.jumpToPage(index);
+      },
+      effect: ExpandingDotsEffect(
+        dotHeight: 4.0.h,
+        dotWidth: 26.28.w,
+        activeDotColor: AppColors.white,
+      ),
+    );
   }
 }

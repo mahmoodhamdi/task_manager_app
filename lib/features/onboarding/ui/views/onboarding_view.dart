@@ -42,80 +42,69 @@ class _OnboardingViewState extends State<OnboardingView> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 56.0.h, horizontal: 24.0.w),
-          child: Stack(
+          padding: EdgeInsets.symmetric(vertical: 24.0.h, horizontal: 16.0.w),
+          child: Column(
             children: [
-              Positioned.fill(
-                top: 56.0.h,
-                child: OnboardingPageView(
-                  pageController: controller,
-                ),
-              ),
-              Positioned(
-                left: 0.0.w,
-                top: 0.0.h,
-                child: TextButtonWidget(
-                  onPressed: () {
-                    setState(() {
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButtonWidget(
+                    text: AppStrings.back,
+                    onPressed: () {
+                      controller.previousPage(
+                        duration: duration,
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                  ),
+                  TextButtonWidget(
+                    text: AppStrings.skip,
+                    onPressed: () {
                       controller.animateToPage(
                         2,
                         duration: duration,
                         curve: Curves.easeInOut,
                       );
-                    });
-                  },
-                ),
+                    },
+                  ),
+                ],
               ),
-              Positioned(
-                left: 0.0.w,
-                bottom: 0.0.h,
-                child: TextButtonWidget(
-                  text: AppStrings.back,
-                  onPressed: () {
-                    setState(() {
-                      controller.previousPage(
-                        duration: duration,
-                        curve: Curves.easeInOut,
-                      );
-                    });
-                  },
-                ),
-              ),
-              ValueListenableBuilder<int>(
-                  valueListenable: pageIndexNotifier,
-                  builder: (context, value, child) {
-                    return Positioned(
-                      bottom: 0.0.h,
-                      right: 0.0.w,
-                      child: AppButtonWidget(
-                        text: pageIndexNotifier.value == 2
-                            ? AppStrings.getStarted
-                            : AppStrings.next,
-                        width: pageIndexNotifier.value == 2 ? 151.0.w : null,
-                        onTap: () {
-                          if (pageIndexNotifier.value != 2) {
-                            setState(() {
-                              controller.nextPage(
-                                duration: duration,
-                                curve: Curves.easeInOut,
-                              );
-                            });
-                          } else {
-                            Navigator.pushReplacementNamed(
-                              context,
-                              Routes.registerView,
-                            );
-                          }
-                        },
-                      ),
-                    );
-                  }),
-              Positioned(
-                bottom: 120.0.h,
-                left: 24.0.w,
-                child: OnboardingDotIndicator(
+              Expanded(
+                child: OnboardingPageView(
                   pageController: controller,
                 ),
+              ),
+              OnboardingDotIndicator(
+                pageController: controller,
+              ),
+              ValueListenableBuilder<int>(
+                valueListenable: pageIndexNotifier,
+                builder: (context, value, child) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(vertical: 24.0.h),
+                    child: AppButtonWidget(
+                      text: pageIndexNotifier.value == 2
+                          ? AppStrings.getStarted
+                          : AppStrings.next,
+                      width: pageIndexNotifier.value == 2
+                          ? 151.0.w
+                          : double.infinity,
+                      onTap: () {
+                        if (pageIndexNotifier.value != 2) {
+                          controller.nextPage(
+                            duration: duration,
+                            curve: Curves.easeInOut,
+                          );
+                        } else {
+                          Navigator.pushReplacementNamed(
+                            context,
+                            Routes.registerView,
+                          );
+                        }
+                      },
+                    ),
+                  );
+                },
               ),
             ],
           ),

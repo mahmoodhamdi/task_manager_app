@@ -4,15 +4,60 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-
+import 'package:task_manager_app/core/constants/app_colors.dart';
+import 'package:task_manager_app/core/constants/app_constants.dart';
+import 'package:task_manager_app/core/constants/app_enums.dart';
+import 'package:task_manager_app/core/helpers/spacing.dart';
 
 class Utils {
-  static void showSnackBar(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
+  static void showSnackBar(
+      BuildContext context, String message, SnackBarType type) {
+    final snackBar = SnackBar(
+      content: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(_getSnackBarIcon(type), color: Colors.white),
+          horizontalSpace(8),
+          Text(message),
+        ],
+      ),
+      backgroundColor: _getSnackBarColor(type),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      margin: const EdgeInsets.only(bottom: 20, left: 50, right: 50),
+      duration: const Duration(seconds: 3),
     );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
- 
+
+  static IconData _getSnackBarIcon(SnackBarType type) {
+    switch (type) {
+      case SnackBarType.error:
+        return Icons.error_outline;
+      case SnackBarType.success:
+        return Icons.check_circle_outline;
+      case SnackBarType.info:
+        return Icons.info_outline;
+      default:
+        return Icons.info_outline;
+    }
+  }
+
+  static Color _getSnackBarColor(SnackBarType type) {
+    switch (type) {
+      case SnackBarType.error:
+        return AppColors.error;
+      case SnackBarType.success:
+        return AppColors.success;
+      case SnackBarType.info:
+        return AppColors.primaryColor;
+      default:
+        return Colors.black;
+    }
+  }
 
   static Future<void> showDialogWithTextField(
     BuildContext context, {
@@ -28,27 +73,50 @@ class Utils {
     await showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: TextField(
-            controller: textEditingController,
-            decoration: InputDecoration(hintText: hintText),
-            onSubmitted: onSubmitted != null
-                ? (value) {
-                    onSubmitted(value);
-                    Navigator.of(context).pop();
-                  }
-                : null,
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text(buttonText),
-              onPressed: () {
-                onSubmitted!(textEditingController.text);
-                Navigator.of(context).pop();
-              },
+        return FadeTransition(
+          opacity: CurvedAnimation(
+            parent: AnimationController(
+              vsync: ScaffoldMessenger.of(context),
+              duration: const Duration(milliseconds: 300),
             ),
-          ],
+            curve: Curves.easeInOut,
+          ),
+          child: AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            title: Text(title,
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.info_outline, size: 50, color: Colors.blue),
+                TextField(
+                  controller: textEditingController,
+                  decoration: InputDecoration(
+                    hintText: hintText,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+                  onSubmitted: onSubmitted != null
+                      ? (value) {
+                          onSubmitted(value);
+                          Navigator.of(context).pop();
+                        }
+                      : null,
+                ),
+              ],
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text(buttonText),
+                onPressed: () {
+                  onSubmitted!(textEditingController.text);
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
         );
       },
     );
@@ -60,13 +128,24 @@ class Utils {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return AlertDialog(
-          content: Row(
-            children: <Widget>[
-              const CircularProgressIndicator(),
-              const SizedBox(width: 20),
-              Text(message),
-            ],
+        return FadeTransition(
+          opacity: CurvedAnimation(
+            parent: AnimationController(
+              vsync: ScaffoldMessenger.of(context),
+              duration: const Duration(milliseconds: 300),
+            ),
+            curve: Curves.easeInOut,
+          ),
+          child: AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            content: Row(
+              children: <Widget>[
+                const CircularProgressIndicator(),
+                const SizedBox(width: 20),
+                Text(message),
+              ],
+            ),
           ),
         );
       },
@@ -81,23 +160,42 @@ class Utils {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(content),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(false);
-              },
-              child: const Text('Cancel'),
+        return FadeTransition(
+          opacity: CurvedAnimation(
+            parent: AnimationController(
+              vsync: ScaffoldMessenger.of(context),
+              duration: duration,
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(true);
-              },
-              child: Text(confirmButtonText),
+            curve: Curves.easeInOut,
+          ),
+          child: AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            title: Row(
+              children: [
+                const Icon(Icons.help_outline, color: Colors.blue),
+                const SizedBox(width: 8),
+                Text(title,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold)),
+              ],
             ),
-          ],
+            content: Text(content),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: const Text('Cancel'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(true);
+                },
+                child: Text(confirmButtonText),
+              ),
+            ],
+          ),
         );
       },
     );
@@ -155,23 +253,42 @@ class Utils {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text(content),
+        return FadeTransition(
+          opacity: CurvedAnimation(
+            parent: AnimationController(
+              vsync: ScaffoldMessenger.of(context),
+              duration: duration,
+            ),
+            curve: Curves.easeInOut,
+          ),
+          child: AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            title: Row(
+              children: [
+                const Icon(Icons.info_outline, color: Colors.blue),
+                const SizedBox(width: 8),
+                Text(title,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold)),
               ],
             ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('OK'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  Text(content),
+                ],
+              ),
             ),
-          ],
+            actions: <Widget>[
+              TextButton(
+                child: const Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
         );
       },
     );
@@ -202,15 +319,11 @@ class Utils {
         enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
   }
 
-  static double getPixelRatio(
-    BuildContext context,
-  ) {
+  static double getPixelRatio(BuildContext context) {
     return MediaQuery.of(context).devicePixelRatio;
   }
 
-  static double getStatusBarHeight(
-    BuildContext context,
-  ) {
+  static double getStatusBarHeight(BuildContext context) {
     return MediaQuery.of(context).padding.top;
   }
 
@@ -222,16 +335,12 @@ class Utils {
     return kToolbarHeight;
   }
 
-  static double getKeyboardHeight(
-    BuildContext context,
-  ) {
+  static double getKeyboardHeight(BuildContext context) {
     final viewInsets = MediaQuery.of(context).viewInsets;
     return viewInsets.bottom;
   }
 
-  static Future<bool> isKeyboardVisible(
-    BuildContext context,
-  ) async {
+  static Future<bool> isKeyboardVisible(BuildContext context) async {
     final viewInsets = View.of(context).viewInsets;
     return viewInsets.bottom > 0;
   }
