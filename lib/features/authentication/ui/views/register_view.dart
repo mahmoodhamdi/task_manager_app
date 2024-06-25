@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/constants/app_colors.dart';
+import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
 import 'package:task_manager_app/core/constants/app_images.dart';
+import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
 import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_divider_widget.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_cubit.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_state.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_state.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/register_with_email_and_password_cubit.dart';
 import 'package:task_manager_app/features/authentication/ui/widgets/register_form.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,11 @@ class RegisterView extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 56.0.h, horizontal: 24.0.w),
             child: Column(
               children: [
-                const RegisterForm(),
+                BlocProvider(
+                  create: (context) =>
+                      getIt<RegisterWithEmailAndPasswordCubit>(),
+                  child: const RegisterForm(),
+                ),
                 verticalSpace(16),
                 const AppDividerWidget(),
                 verticalSpace(24),
@@ -40,10 +46,17 @@ class RegisterView extends StatelessWidget {
                             'Register Failed: ${state.error}',
                             SnackBarType.error);
                       } else if (state is GoogleSignInSuccess) {
-                        Utils.showSnackBar(context, 'Email Created Successfully!',
+                        Utils.showSnackBar(
+                            context,
+                            'Email Created Successfully!',
                             SnackBarType.success);
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, Routes.homeView, (route) => false);
+                        Future.delayed(navigationDuration, () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              Routes.homeView,
+                              arguments: state.user,
+                              (route) => false); // replace with your route
+                        });
                       }
                     },
                     builder: (context, state) {

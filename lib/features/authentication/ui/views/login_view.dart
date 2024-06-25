@@ -4,14 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/constants/app_colors.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
 import 'package:task_manager_app/core/constants/app_images.dart';
+import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
 import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_divider_widget.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_cubit.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in_state.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_state.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/login_with_email_and_password_cubit.dart';
 import 'package:task_manager_app/features/authentication/ui/widgets/login_form.dart';
 
 class LoginView extends StatelessWidget {
@@ -26,7 +28,10 @@ class LoginView extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 56.0.h, horizontal: 24.0.w),
             child: Column(
               children: [
-                const LoginForm(),
+                BlocProvider(
+                  create: (context) => getIt<LoginWithEmailAndPasswordCubit>(),
+                  child: const LoginForm(),
+                ),
                 verticalSpace(16),
                 const AppDividerWidget(),
                 verticalSpace(24),
@@ -41,6 +46,7 @@ class LoginView extends StatelessWidget {
                         Utils.showSnackBar(
                             context, 'Welcome Back!', SnackBarType.success);
                         Navigator.pushNamedAndRemoveUntil(
+                           arguments: state.user,
                             context, Routes.homeView, (route) => false);
                       }
                     },
