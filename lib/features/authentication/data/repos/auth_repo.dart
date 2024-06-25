@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:task_manager_app/features/authentication/data/models/login_with_email_and_password_request_body.dart';
 import 'package:task_manager_app/features/authentication/data/models/register_with_email_and_password_request_body.dart';
 
 class AuthRepo {
@@ -42,4 +43,20 @@ class AuthRepo {
       rethrow;
     }
   }
+
+
+Future<User?> loginWithEmailAndPassword(LoginWithEmailAndPasswordRequestBody body) async {
+  try {
+    final UserCredential userCredential =
+        await _auth.signInWithEmailAndPassword(
+      email: body.email,
+      password: body.password,
+    );
+    return userCredential.user;
+  }
+
+  catch (e) {
+    rethrow;
+  }
+}
 }

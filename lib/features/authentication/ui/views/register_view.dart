@@ -14,7 +14,7 @@ import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_divider_widget.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_cubit.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_state.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/registerwithemailandpassword_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/register_with_email_and_password_cubit.dart';
 import 'package:task_manager_app/features/authentication/ui/widgets/register_form.dart';
 
 class RegisterView extends StatelessWidget {
@@ -54,6 +54,7 @@ class RegisterView extends StatelessWidget {
                           Navigator.pushNamedAndRemoveUntil(
                               context,
                               Routes.loginView,
+                              arguments: state.user,
                               (route) => false); // replace with your route
                         });
                       }
