@@ -53,7 +53,7 @@ class RegisterView extends StatelessWidget {
                         Future.delayed(navigationDuration, () {
                           Navigator.pushNamedAndRemoveUntil(
                               context,
-                              Routes.loginView,
+                              Routes.homeView,
                               arguments: state.user,
                               (route) => false); // replace with your route
                         });
