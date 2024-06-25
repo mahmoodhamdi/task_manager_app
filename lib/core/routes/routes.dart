@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_app/features/authentication/ui/views/login_view.dart';
 import 'package:task_manager_app/features/authentication/ui/views/register_view.dart';
@@ -16,8 +17,7 @@ class Routes {
   static const String addTaskCategoryView = '/add_task_category_view';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    // this arguments is for passing data from one screen to another
-    // final arguments = settings.arguments;
+    final args = settings.arguments;
 
     switch (settings.name) {
       case onboarding:
@@ -25,17 +25,26 @@ class Routes {
 
       case registerView:
         return MaterialPageRoute(builder: (_) => const RegisterView());
+
       case loginView:
         return MaterialPageRoute(builder: (_) => const LoginView());
+
       case homeView:
+        // Check if args is of type User (replace User with actual type)
+        if (args is User) {
+          return MaterialPageRoute(builder: (_) => HomeView(user: args));
+        }
+        // If args is null or of unexpected type, handle it accordingly
         return MaterialPageRoute(builder: (_) => const HomeView());
+
       default:
-        // error page
+        // Return a default error page for unknown routes
         return MaterialPageRoute(
-            builder: (_) => Scaffold(
-                  body: Center(child: Text('${settings.name} not found')),
-                  appBar: AppBar(title: const Text('Error')),
-                ));
+          builder: (_) => Scaffold(
+            body: Center(child: Text('${settings.name} not found')),
+            appBar: AppBar(title: const Text('Error')),
+          ),
+        );
     }
   }
 }

@@ -9,7 +9,7 @@ import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/validators/validation.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_text_form_field.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/registerwithemailandpassword_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/register_with_email_and_password_cubit.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/registerwithemailandpassword_state.dart';
 
 class RegisterForm extends StatelessWidget {
@@ -84,7 +84,8 @@ class RegisterForm extends StatelessWidget {
                     SnackBarType.success);
                 Future.delayed(navigationDuration, () {
                   Navigator.pushNamedAndRemoveUntil(
-                      context, Routes.loginView, (route) => false); // replace with your route
+                     arguments: state.user,
+                      context, Routes.homeView, (route) => false); // replace with your route
                 });
               }
             },
