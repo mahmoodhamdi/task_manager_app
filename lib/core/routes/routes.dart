@@ -1,7 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/features/authentication/ui/views/login_view.dart';
 import 'package:task_manager_app/features/authentication/ui/views/register_view.dart';
+import 'package:task_manager_app/features/home/logic/cubits/navigation_cubit/navigation_cubit_cubit.dart';
 import 'package:task_manager_app/features/home/ui/views/home_view.dart';
 import 'package:task_manager_app/features/onboarding/ui/views/onboarding_view.dart';
 
@@ -30,12 +32,11 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const LoginView());
 
       case homeView:
-        // Check if args is of type User (replace User with actual type)
-        if (args is User) {
-          return MaterialPageRoute(builder: (_) => HomeView(user: args));
-        }
-        // If args is null or of unexpected type, handle it accordingly
-        return MaterialPageRoute(builder: (_) => const HomeView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<NavigationCubit>(),
+                  child: const HomeView(),
+                ));
 
       default:
         // Return a default error page for unknown routes

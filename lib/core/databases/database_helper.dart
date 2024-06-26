@@ -1,6 +1,7 @@
 import 'dart:async';
-import 'package:sqflite/sqflite.dart';
+
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:task_manager_app/features/authentication/data/models/user_model.dart';
 
 class DatabaseHelper {
@@ -34,7 +35,6 @@ class DatabaseHelper {
         email TEXT NOT NULL,
         username TEXT NOT NULL,
         image TEXT,
-        created_at TEXT NOT NULL
       )
     ''');
     await db.execute('''
@@ -50,7 +50,7 @@ class DatabaseHelper {
     final db = await database;
     await db.insert(
       'users',
-      user.toMap(),
+      user.toMap(), // Assuming toMap() converts UserModel to Map<String, dynamic>
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
@@ -59,7 +59,8 @@ class DatabaseHelper {
     final db = await database;
     final List<Map<String, dynamic>> maps = await db.query('users');
     if (maps.isNotEmpty) {
-      return UserModel.fromMap(maps.first);
+      return UserModel.fromMap(maps
+          .first); // Assuming fromMap() constructs UserModel from Map<String, dynamic>
     }
     return null;
   }
@@ -70,7 +71,7 @@ class DatabaseHelper {
       'users',
       user.toMap(),
       where: 'id = ?',
-      whereArgs: [user.id],
+      whereArgs: [user.uid],
     );
   }
 

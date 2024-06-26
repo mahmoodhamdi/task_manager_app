@@ -1,38 +1,63 @@
+import 'package:firebase_auth/firebase_auth.dart';
 
 class UserModel {
-  final String id;
+  final String uid;
   final String email;
-  final String username;
-  final String? image;
-  final String createdAt;
+  final String displayName;
+  final String? photoUrl; // Optional attribute for profile photo URL
+  final String? phoneNumber; // Optional attribute for phone number
+  final bool emailVerified; // Indicates if the email is verified
 
   UserModel({
-    required this.id,
+    required this.uid,
     required this.email,
-    required this.username,
-    this.image,
-    required this.createdAt,
+    required this.displayName,
+    this.photoUrl,
+    this.phoneNumber,
+    required this.emailVerified,
   });
 
-  // Convert a User object into a Map object
-  Map<String, dynamic> toMap() {
+  factory UserModel.fromFirebase(User user) {
+    return UserModel(
+      uid: user.uid,
+      email: user.email!,
+      displayName: user.displayName ?? "",
+      photoUrl: user.photoURL,
+      phoneNumber: user.phoneNumber,
+      emailVerified: user.emailVerified,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
     return {
-      'id': id,
+      'uid': uid,
       'email': email,
-      'username': username,
-      'image': image,
-      'created_at': createdAt,
+      'displayName': displayName,
+      'photoUrl': photoUrl ?? "",
+      'phoneNumber': phoneNumber ?? "",
+      'emailVerified': emailVerified,
     };
   }
 
-  // Extract a User object from a Map object
+  Map<String, dynamic> toMap() {
+    return {
+      'id': uid,
+      'email': email,
+      'username': displayName,
+      'image': photoUrl,
+      'phoneNumber': phoneNumber,
+      'emailVerified': emailVerified,
+    };
+  }
+
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: map['id'],
+      uid: map['id'],
       email: map['email'],
-      username: map['username'],
-      image: map['image'],
-      createdAt: map['created_at'],
+      displayName: map['username'],
+      photoUrl: map['image'],
+      phoneNumber: null, // Adjust this based on your actual data structure
+      emailVerified: false, // Adjust this based on your actual data structure
     );
   }
 }
