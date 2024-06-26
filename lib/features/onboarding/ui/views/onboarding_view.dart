@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_strings.dart';
+import 'package:task_manager_app/core/databases/database_helper.dart';
+import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/text_button_widget.dart';
@@ -89,13 +91,15 @@ class _OnboardingViewState extends State<OnboardingView> {
                       width: pageIndexNotifier.value == 2
                           ? 151.0.w
                           : double.infinity,
-                      onTap: () {
+                      onTap: () async{
                         if (pageIndexNotifier.value != 2) {
                           controller.nextPage(
                             duration: duration,
                             curve: Curves.easeInOut,
                           );
                         } else {
+                          final db = getIt<DatabaseHelper>();
+                           await db.insertSetting('onboardingShown', 'true');
                           Navigator.pushReplacementNamed(
                             context,
                             Routes.registerView,

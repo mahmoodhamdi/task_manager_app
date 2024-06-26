@@ -6,7 +6,7 @@ import 'package:task_manager_app/features/home/ui/views/home_view.dart';
 import 'package:task_manager_app/features/onboarding/ui/views/onboarding_view.dart';
 
 class Routes {
-  static const String onboarding = '/';
+  static const String onboarding = '/onboarding';
   static const String registerView = '/register_view';
   static const String homeView = '/home_view';
   static const String loginView = '/login_view';
