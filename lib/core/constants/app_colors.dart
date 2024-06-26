@@ -5,11 +5,14 @@ class AppColors {
   static const Color darkBlue = Color(0xFF121212);
   static const Color textColor = Color(0xFFFFFFFF);
   static const Color white = Color(0xFFFFFFFF);
+  static Color whiteWithOpacity = Colors.white.withOpacity(0.87);
+
   static const Color black = Color(0xFF000000);
   static const Color textFieldBackgroundColor = Color(0xFF1D1D1D);
   static const Color textFieldBorderColor = Color(0xFF979797);
   static const Color textFieldHintColor = Color(0xFF535353);
   static const Color hintTextColor = Color(0xFF535353);
+  static const Color lightGrey = Color(0XFFAFAFAF);
   static const Color dividerColor = Color(0xFF979797);
   static const Color buttonColor = Color(0xFF8687E7);
 

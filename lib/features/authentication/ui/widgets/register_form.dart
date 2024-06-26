@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
+import 'package:task_manager_app/core/databases/database_helper.dart';
+import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
@@ -9,6 +11,7 @@ import 'package:task_manager_app/core/utils/utils.dart';
 import 'package:task_manager_app/core/utils/validation.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_text_form_field.dart';
+import 'package:task_manager_app/features/authentication/data/models/user_model.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/register_with_email_and_password_cubit.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/registerwithemailandpassword_state.dart';
 
@@ -82,10 +85,15 @@ class RegisterForm extends StatelessWidget {
               if (state is RegisterWithEmailAndPasswordSuccess) {
                 Utils.showSnackBar(context, 'Email Created Successfully!',
                     SnackBarType.success);
+                final db = getIt<DatabaseHelper>();
+                db.insertSetting("isLoggedIn", "true");
+                db.insertUser(UserModel.fromFirebase(state.user));
                 Future.delayed(navigationDuration, () {
                   Navigator.pushNamedAndRemoveUntil(
-                     arguments: state.user,
-                      context, Routes.homeView, (route) => false); // replace with your route
+                      arguments: state.user,
+                      context,
+                      Routes.homeView,
+                      (route) => false); // replace with your route
                 });
               }
             },

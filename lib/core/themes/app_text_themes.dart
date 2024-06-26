@@ -17,6 +17,17 @@ class AppTextThemes {
     color: AppColors.dividerColor,
   );
   //font12WhiteRegular
+  static TextStyle font12WhiteRegularWithStyle = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.white.withOpacity(0.87),
+  ); //font12WhiteRegular
+  static TextStyle font20WhiteRegularWithStyle = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.white.withOpacity(0.87),
+  );
+  //font12WhiteRegular
   static TextStyle font12WhiteRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
@@ -160,7 +171,12 @@ class AppTextThemes {
     fontWeight: FontWeightHelper.bold,
     color: AppColors.darkBlue,
   );
-
+// regular 18 AFAFAF
+  static TextStyle font18lightGreyRegular = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.lightGrey,
+  );
   static TextStyle font18darkBlueSemiBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
