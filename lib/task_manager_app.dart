@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
 
 class TaskManagerApp extends StatelessWidget {
-  const TaskManagerApp({super.key});
+  const TaskManagerApp({super.key, required this.initialRoute});
+  final String initialRoute;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -14,7 +15,7 @@ class TaskManagerApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Task Manager App',
             theme: ThemeData.dark(),
-            initialRoute: Routes.onboarding,
+            initialRoute: initialRoute,
             onGenerateRoute: Routes.generateRoute,
           );
         });

@@ -5,6 +5,7 @@ import 'package:task_manager_app/core/constants/app_colors.dart';
 import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
 import 'package:task_manager_app/core/constants/app_images.dart';
+import 'package:task_manager_app/core/databases/database_helper.dart';
 import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
@@ -50,6 +51,8 @@ class RegisterView extends StatelessWidget {
                             context,
                             'Email Created Successfully!',
                             SnackBarType.success);
+                        final db = getIt<DatabaseHelper>();
+                        db.insertSetting("isLoggedIn", "true");
                         Future.delayed(navigationDuration, () {
                           Navigator.pushNamedAndRemoveUntil(
                               context,

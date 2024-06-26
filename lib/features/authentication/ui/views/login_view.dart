@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/constants/app_colors.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
 import 'package:task_manager_app/core/constants/app_images.dart';
+import 'package:task_manager_app/core/databases/database_helper.dart';
 import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
@@ -45,9 +46,13 @@ class LoginView extends StatelessWidget {
                       } else if (state is GoogleSignInSuccess) {
                         Utils.showSnackBar(
                             context, 'Welcome Back!', SnackBarType.success);
+                        final db = getIt<DatabaseHelper>();
+                        db.insertSetting("isLoggedIn", "true");
                         Navigator.pushNamedAndRemoveUntil(
-                           arguments: state.user,
-                            context, Routes.homeView, (route) => false);
+                            arguments: state.user,
+                            context,
+                            Routes.homeView,
+                            (route) => false);
                       }
                     },
                     builder: (context, state) {
