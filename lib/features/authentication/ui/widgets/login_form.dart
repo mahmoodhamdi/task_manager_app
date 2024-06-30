@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_manager_app/core/constants/app_constants.dart';
 import 'package:task_manager_app/core/constants/app_enums.dart';
+import 'package:task_manager_app/core/databases/database_helper.dart';
+import 'package:task_manager_app/core/di/service_locator.dart';
 import 'package:task_manager_app/core/helpers/spacing.dart';
 import 'package:task_manager_app/core/routes/routes.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
 import 'package:task_manager_app/core/utils/utils.dart';
-import 'package:task_manager_app/core/validators/validation.dart';
+import 'package:task_manager_app/core/utils/validation.dart';
 import 'package:task_manager_app/core/widgets/app_button_widget.dart';
 import 'package:task_manager_app/core/widgets/app_text_form_field.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/login_with_email_and_password_cubit.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/login_with_email_and_password_state.dart';
+import 'package:task_manager_app/features/authentication/data/models/user_model.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/login_with_email_and_password/login_with_email_and_password_cubit.dart';
+import 'package:task_manager_app/features/authentication/logic/cubits/login_with_email_and_password/login_with_email_and_password_state.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -66,6 +69,9 @@ class LoginForm extends StatelessWidget {
               } else if (state is LoginWithEmailAndPasswordSuccess) {
                 Utils.showSnackBar(
                     context, 'Welcome Back!', SnackBarType.success);
+                final db = getIt<DatabaseHelper>();
+                db.insertSetting("isLoggedIn", "true");
+                db.insertUser(UserModel.fromFirebase(state.user));
                 Future.delayed(navigationDuration, () {
                   Navigator.pushNamedAndRemoveUntil(
                       context,

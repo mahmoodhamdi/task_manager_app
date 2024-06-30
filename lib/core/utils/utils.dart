@@ -387,4 +387,7 @@ class Utils {
   static bool isAndroid() {
     return Platform.isAndroid;
   }
+ static Future<Uint8List> imageFileToByteArray(File imageFile) async {
+    return await imageFile.readAsBytes();
+  }
 }
