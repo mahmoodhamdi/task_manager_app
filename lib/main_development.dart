@@ -12,7 +12,7 @@ void main() async {
   await Firebase.initializeApp();
   await ScreenUtil.ensureScreenSize();
   runApp(DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: kReleaseMode,
       builder: (context) {
         return const TaskManagerApp();
       }));

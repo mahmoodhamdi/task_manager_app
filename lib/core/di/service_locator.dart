@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:task_manager_app/features/authentication/data/repos/auth_repo.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/login_with_email_and_password_cubit.dart';
 import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/register_with_email_and_password_cubit.dart';
+import 'package:task_manager_app/features/home/logic/navigation/navigation_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -25,4 +26,6 @@ Future<void> setupServiceLocator() async {
 // Register LoginWithEmailAndPasswordCubit
   getIt.registerFactory<LoginWithEmailAndPasswordCubit>(
       () => LoginWithEmailAndPasswordCubit());
+// Register NavigationCubit
+  getIt.registerFactory<NavigationCubit>(() => NavigationCubit());      
 }
