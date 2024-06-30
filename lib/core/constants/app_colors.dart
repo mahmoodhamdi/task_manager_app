@@ -6,7 +6,7 @@ class AppColors {
   static const Color textColor = Color(0xFFFFFFFF);
   static const Color white = Color(0xFFFFFFFF);
   static Color whiteWithOpacity = Colors.white.withOpacity(0.87);
-
+static const Color navBar = Color(0xff363636);
   static const Color black = Color(0xFF000000);
   static const Color textFieldBackgroundColor = Color(0xFF1D1D1D);
   static const Color textFieldBorderColor = Color(0xFF979797);

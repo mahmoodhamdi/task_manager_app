@@ -3,11 +3,11 @@ class AppImages {
   static const String apple = 'assets/svgs/apple.svg';
   static const String backButton = 'assets/svgs/back-button.svg';
   static const String designCategory = 'assets/svgs/design_category.svg';
-    static const String google = 'assets/svgs/google.svg';
+  static const String google = 'assets/svgs/google.svg';
   static const String groceryCategory = 'assets/svgs/grocery_category.svg';
   static const String healthCategory = 'assets/svgs/health_category.svg';
   static const String homeCategory = 'assets/svgs/home_category.svg';
-   static const String movieCategory = 'assets/svgs/movie_category.svg';
+  static const String movieCategory = 'assets/svgs/movie_category.svg';
   static const String musicCategory = 'assets/svgs/music_category.svg';
   static const String onboarding1 = 'assets/svgs/onboarding_1.svg';
   static const String onboarding2 = 'assets/svgs/onboarding_2.svg';

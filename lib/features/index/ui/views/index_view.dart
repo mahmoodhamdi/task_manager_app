@@ -16,22 +16,22 @@ class IndexView extends StatelessWidget {
         child: Stack(
           children: [
             Padding(
-              padding:   EdgeInsets.symmetric(horizontal: 24.0.w,vertical: 30.0.h),
+              padding:
+                  EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 30.0.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Iconsax.sort,
-                        color: AppColors.whiteWithOpacity),
+                    onPressed: () {
+                      
+                    },
+                    icon: Icon(Iconsax.sort, color: AppColors.whiteWithOpacity),
                   ),
-                 
                   Text(
                     'Index',
                     style: AppTextThemes.font20WhiteRegularWithStyle,
                   ),
-                 
-                    CircleAvatar(
+                  CircleAvatar(
                     backgroundColor: AppColors.primaryColor,
                     radius: 20.r,
                   )
