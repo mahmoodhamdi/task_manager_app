@@ -17,6 +17,17 @@ class AppTextThemes {
     color: AppColors.dividerColor,
   );
   //font12WhiteRegular
+  static TextStyle font12WhiteRegularWithStyle = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.white.withOpacity(0.87),
+  ); //font12WhiteRegular
+  static TextStyle font20WhiteRegularWithStyle = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.white.withOpacity(0.87),
+  );
+  //font12WhiteRegular
   static TextStyle font12WhiteRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
