@@ -20,7 +20,7 @@ Task Manager App is an open-source Flutter application designed to help users ma
       Efficiently fetch tasks using pagination.
 
 - [ ] 🔄 **State Management**  
-      Implemented using Provider/Bloc/Redux for optimal performance.
+      Implemented using Bloc for optimal performance.
 
 - [ ] 💾 **Local Storage**  
       Persist tasks locally using shared preferences or SQLite.
@@ -74,6 +74,10 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [ ] Subtasks management.
 - [ ] Task due dates and reminders.
 - [ ] Task status tracking (To Do, In Progress, Done).
+- [ ] **View Tasks**: Display a list of tasks with options to edit and delete.
+- [ ] **Add Tasks**: Add new tasks to the list.
+- [ ] **Task Details**: View and edit task details.
+- [ ] **Task Filters**: Filter tasks by date, category, and status.
 
 ### Pagination
 
@@ -133,133 +137,81 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [ ] **Productivity Insights**: Detailed analytics on task completion and productivity trends.
 - [ ] **Reports**: Generate reports on task performance over time.
 
-## Recent Changes
+### Search and Filter
 
-### Initial Project Setup and Configuration
+- [ ] **Search Tasks**: Search for tasks using keywords.
+- [ ] **Filter Tasks**: Apply filters to narrow down tasks by date, category, and status.
+- [ ] **Sort Tasks**: Sort tasks by different criteria.
 
-- **Firebase Integration**: Added fingerprint SHA for Firebase authentication.
-- **Android Configuration**: Updated minSdkVersion to 23.
-- **Assets and Packages**: Configured assets and added necessary packages.
-- **Route Extensions and Spacing Widgets**: Implemented custom route extensions and spacing widgets for consistent UI spacing.
-- **Native Splash Screen and Launcher Icon**: Set up a native splash screen and custom launcher icon for branding.
-- **Text Themes**: Defined custom text themes for consistent typography across the app.
-- **ScreenUtil Integration**: Integrated flutter_screenutil for responsive design.
-- **Service Locator**: Set up a service locator for dependency injection.
-- **App Routes**: Created and configured application routes.
-- **Error Handling**: Added comprehensive error handling with platform, format, Firebase, and Dio exceptions.
+### Collaboration
 
-### Onboarding Feature
+- [ ] **Assign Tasks**: Assign tasks to team members.
+- [ ] **Comments**: Add and view comments on tasks.
+- [ ] **Real-Time Collaboration**: Collaborate on tasks with real-time updates.
 
-- **App Images**: Added SVG images for onboarding.
-- **App Strings**: Defined consistent strings for the app.
-- **Onboarding View**: Implemented onboarding view with page view for structured user guidance.
-- **Onboarding Dots Indicator**: Created an onboarding dots indicator for visual pagination during onboarding.
+### Time Tracking
 
-## Project Structure
+- [ ] **Pomodoro Timer**: Use a Pomodoro timer to manage time spent on tasks.
+- [ ] **Log Time**: Record the time spent on tasks.
+- [ ] **Time Reports**: Generate reports on time spent on tasks.
 
-```
-lib/
-  |- core/
-  |  |- services/
-  |  |  |- api_service.dart
-  |
-  |- themes/
-  |  |- app_text_themes.dart
-  |
-  |- validators/
-  |  |- validation.dart
-  |
-  |- utils/
-  |  |- logger.dart
-  |
-  |- di/
-  |  |- service_locator.dart
-  |
-  |- constants/
-  |  |- app_images.dart
-  |  |- app_strings.dart
-  |  |- app_constants.dart
-  |  |- app_enums.dart
-  |  |- app_colors.dart
-  |  |- api_constants.dart
-  |
-  |- features/
-  |  |- authentication/
-  |  |  |- presentation/
-  |  |  |  |- views/
-  |  |  |  |- view_models/
-  |  |  |  |- widgets/
-  |  |  |  |- manager/
-  |  |  |  |  |- cubits/
-  |  |  |- domain/
-  |  |  |  |- use_cases/
-  |  |  |  |- entities/
-  |  |  |- data/
-  |  |  |  |- repos/
-  |  |  |  |- models/
-  |
-  |  |- task_management/
-  |  |  |- presentation/
-  |  |  |  |- views/
-  |  |  |  |- view_models/
-  |  |  |  |- widgets/
-  |  |  |  |- manager/
-  |  |  |  |  |- cubits/
-  |  |  |- domain/
-  |  |  |  |- use_cases/
-  |  |  |  |- entities/
-  |  |  |- data/
-  |  |  |  |- repos/
-  |  |  |  |- models/
-  |
-  |  |- settings/
-  |  |  |- presentation/
-  |  |  |  |- views/
-  |  |  |  |- view_models/
-  |  |  |  |- widgets/
-  |  |  |  |- manager/
-  |  |  |  |  |- cubits/
-  |  |  |- domain/
-  |  |  |  |- use_cases/
-  |  |  |  |- entities/
-  |  |  |- data/
-  |  |  |  |- repos/
-  |  |  |  |- models/
-  |
-  |  |- notifications/
-  |  |  |- presentation/
-  |  |  |  |- views/
-  |  |  |  |- view_models/
-  |  |  |  |- widgets/
-  |  |  |  |- manager/
-  |  |  |  |  |- cubits/
-  |  |  |- domain/
-  |  |  |  |- use_cases/
-  |  |  |  |- entities/
-  |  |  |- data/
-  |  |  |  |- repos/
-  |  |  |  |- models/
-  |
-  |  |- onboarding/
-  |  |  |- presentation/
-  |  |  |  |- views/
-  |  |  |  |- view_models/
-  |  |  |  |- widgets/
-  |  |  |  |- manager/
-  |  |  |  |  |- cubits/
-  |  |  |- domain/
-  |  |  |  |- use_cases/
-  |  |  |  |- entities/
-  |  |  |- data/
-  |  |  |  |- repos/
-  |  |  |  |- models/
-  |
-  |- task_manager
+### Integration with Other Services
 
-_app.dart
-  |- main_production.dart
-  |- main_development.dart
-```
+- [ ] **Project Management Tools**: Sync tasks with tools like Trello and Asana.
+- [ ] **Note-Taking Integration**: Integrate with Evernote and OneNote for task notes.
+- [ ] **Communication Tools**: Connect with Slack and Microsoft Teams for task updates.
+
+### Themes and Customization
+
+- [ ] **Custom Themes**: Customize the app theme and color scheme.
+- [ ] **Home Screen Widgets**: Add widgets to the home screen.
+- [ ] **Custom Task Views**: Choose different views such as list, Kanban, and calendar.
+
+### Analytics and Reporting
+
+- [ ] **Generate Reports**: Create reports on task completion, time tracking, and productivity metrics.
+- [ ] **Export Reports**: Export reports in formats such as PDF and Excel.
+- [ ] **Productivity Insights**: Get recommendations based on task performance.
+
+### Profile Management
+
+- [ ] **User Profile**: View and update user profile information.
+- [ ] **Change Password**: Update user password.
+- [ ] **Account Settings**: Manage account-related settings.
+
+### Error/Message Dialog
+
+- [ ] **Error Handling**: Display error messages for failed actions.
+- [ ] **Confirmation Dialogs**: Show confirmation dialogs for critical actions.
+- [ ] **Info Messages**: Provide informational messages to users.
+
+### Data Backup and Restore
+
+- [ ] **Backup Data**: Backup user data to cloud storage.
+- [ ] **Restore Data**: Restore data from backups.
+- [ ] **Scheduled Backups**: Schedule regular backups.
+
+### User Activity Log
+
+- [ ] **View Activity Log**: Display a log of user activities.
+- [ ] **Filter Activities**: Filter activities by date and type.
+- [ ] **Export Log**: Export activity logs for review.
+
+### Multi-language Support
+
+- [ ] **Language Selection**: Choose from multiple languages for the app interface.
+- [ ] **Localized Content**: Provide content in the selected language.
+
+### Dark Mode
+
+- [ ] **Enable Dark Mode**: Switch to dark mode for better visibility in low light.
+- [ ] **Schedule Dark Mode**: Automatically switch to dark mode based on the time of day.
+
+### Accessibility Settings
+
+- [ ] **Text Size**: Adjust text size for better readability.
+- [ ] **High Contrast Mode**: Enable high contrast mode for better visibility.
+- [ ] **Screen Reader Support**: Support screen readers for visually impaired users.
 
 ## Contributing
 
@@ -270,10 +222,6 @@ We welcome contributions to the Task Manager App! If you would like to contribut
 3. Make your changes and commit them (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
