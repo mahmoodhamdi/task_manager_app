@@ -1,8 +1,6 @@
-Here's the updated README file reflecting your decision to make the project open source:
-
 # Task Manager App
 
-Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently. It includes features for user authentication, task CRUD operations, pagination for fetching tasks, robust state management, local storage using Flutter's capabilities, and comprehensive unit tests.
+Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently and collaboratively. The app includes robust features such as user authentication, task CRUD operations, real-time updates across devices, calendar integration, and comprehensive state management. It is designed to be free and ad-free, ensuring a seamless user experience without distractions.
 
 ## 🌟 Features Overview
 
@@ -12,8 +10,8 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [x] 🎨 **Flavors**  
       Utilizes flavors to manage different environments such as Development and Production.
 
-- [ ] 🔑 **User Authentication**  
-      Secure user login using Username and Password.
+- [x] 🔑 **User Authentication**  
+      Secure user login using Username and Password, and various authentication methods including Firebase and Google.
 
 - [ ] ✏️ **Task Management**  
       Create, read, update, and delete tasks seamlessly.
@@ -39,6 +37,15 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [x] 📝 **Onboarding**  
       Guide users through the app features with an interactive onboarding experience.
 
+- [ ] 🔗 **Calendar Integration**  
+      Link tasks to calendars for better schedule management.
+
+- [ ] 🔄 **Real-Time Updates**  
+      Sync tasks in real-time across multiple devices.
+
+- [ ] 📊 **Advanced Analytics**  
+      Provide insights and analytics on task completion and productivity.
+
 ## Key Features
 
 ### CI/CD Setup
@@ -50,55 +57,81 @@ Task Manager App is an open-source Flutter application designed to help users ma
 ### User Authentication
 
 - [x] User registration using email and password.
-
 - [x] User login using email and password.
-
 - [ ] User logout.
-
 - [ ] User profile management.
-
 - [x] User authentication using Firebase.
-
 - [x] User authentication using Google.
-
 - [ ] User authentication using Apple.
-
 - [ ] User authentication using Microsoft.
-
 - [ ] User authentication using Facebook.
 
 ### Task Management
 
 - [ ] CRUD operations for tasks (Create, Read, Update, Delete).
+- [ ] Task prioritization (High, Medium, Low).
+- [ ] Task categorization.
+- [ ] Subtasks management.
+- [ ] Task due dates and reminders.
+- [ ] Task status tracking (To Do, In Progress, Done).
 
 ### Pagination
 
 - [ ] Efficiently fetch tasks in batches using pagination.
+- [ ] Scrollable task list with lazy loading.
+- [ ] Infinite scrolling.
 
 ### State Management
 
 - [ ] State management implemented using Provider/Bloc/Redux.
+- [ ] Centralized state management for consistency.
+- [ ] Real-time state updates.
 
 ### Local Storage
 
 - [ ] Persist tasks locally using Flutter's shared preferences or SQLite.
+- [ ] Offline access to tasks.
+- [ ] Synchronization with cloud storage.
 
 ### Unit Tests
 
 - [ ] Comprehensive unit tests ensuring app functionality and stability.
+- [ ] Mocking and stubbing for isolated tests.
+- [ ] Continuous integration with test coverage reporting.
 
 ### Settings
 
 - [ ] **Manage user preferences and application settings.**
+- [ ] Theme customization (Light/Dark mode).
+- [ ] Notification preferences.
+- [ ] Account management.
 
 ### Notifications
 
 - [ ] **Handle notifications and alerts for users.**
+- [ ] Push notifications for task reminders.
+- [ ] In-app notifications for real-time updates.
+- [ ] Email notifications.
 
 ### Onboarding
 
 - [x] **Interactive Onboarding**: Guide users through the app features with an engaging and informative onboarding experience.
 - [x] **Page View and Dots Indicator**: Smooth transitions and visual indicators for better user orientation during onboarding.
+
+### Calendar Integration
+
+- [ ] **Link to Calendars**: Sync tasks with Google Calendar, Outlook, and other calendar apps for seamless schedule management.
+- [ ] **Calendar View**: View tasks in a calendar format.
+
+### Real-Time Updates
+
+- [ ] **Multi-Device Sync**: Sync tasks in real-time across multiple devices.
+- [ ] **Collaborative Tasks**: Real-time collaboration on tasks with multiple users.
+
+### Advanced Analytics
+
+- [ ] **Productivity Insights**: Detailed analytics on task completion and productivity trends.
+- [ ] **Reports**: Generate reports on task performance over time.
 
 ## Recent Changes
 
@@ -221,7 +254,9 @@ lib/
   |  |  |  |- repos/
   |  |  |  |- models/
   |
-  |- task_manager_app.dart
+  |- task_manager
+
+_app.dart
   |- main_production.dart
   |- main_development.dart
 ```
