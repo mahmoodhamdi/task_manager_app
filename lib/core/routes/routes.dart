@@ -2,11 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_manager_app/core/di/service_locator.dart';
-import 'package:task_manager_app/features/authentication/ui/views/login_view.dart';
-import 'package:task_manager_app/features/authentication/ui/views/register_view.dart';
-import 'package:task_manager_app/features/home/logic/navigation/navigation_cubit.dart';
-import 'package:task_manager_app/features/home/ui/views/home_view.dart';
-import 'package:task_manager_app/features/onboarding/ui/views/onboarding_view.dart';
+import 'package:task_manager_app/features/authentication/presentation/views/login_view.dart';
+import 'package:task_manager_app/features/authentication/presentation/views/register_view.dart';
+import 'package:task_manager_app/features/home/presentation/manager/logic/navigation/navigation_cubit.dart';
+import 'package:task_manager_app/features/home/presentation/views/home_view.dart';
+import 'package:task_manager_app/features/onboarding/presentation/views/onboarding_view.dart';
 
 class Routes {
   static const String onboarding = '/onboarding_view';

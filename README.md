@@ -1,8 +1,8 @@
+Here's the updated README file reflecting your decision to make the project open source:
+
 # Task Manager App
 
-## Description
-
-Task Manager App is a Flutter application designed to help users manage their tasks efficiently. It includes features for user authentication, task CRUD operations, pagination for fetching tasks, robust state management, local storage using Flutter's capabilities, and comprehensive unit tests.
+Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently. It includes features for user authentication, task CRUD operations, pagination for fetching tasks, robust state management, local storage using Flutter's capabilities, and comprehensive unit tests.
 
 ## 🌟 Features Overview
 
@@ -49,7 +49,23 @@ Task Manager App is a Flutter application designed to help users manage their ta
 
 ### User Authentication
 
-- [ ] Secure user login with Username and Password.
+- [x] User registration using email and password.
+
+- [x] User login using email and password.
+
+- [ ] User logout.
+
+- [ ] User profile management.
+
+- [x] User authentication using Firebase.
+
+- [x] User authentication using Google.
+
+- [ ] User authentication using Apple.
+
+- [ ] User authentication using Microsoft.
+
+- [ ] User authentication using Facebook.
 
 ### Task Management
 
@@ -98,7 +114,6 @@ Task Manager App is a Flutter application designed to help users manage their ta
 - **Service Locator**: Set up a service locator for dependency injection.
 - **App Routes**: Created and configured application routes.
 - **Error Handling**: Added comprehensive error handling with platform, format, Firebase, and Dio exceptions.
-- **ScreenUtil Integration**: Integrated flutter_screenutil for responsive design.
 
 ### Onboarding Feature
 
@@ -112,93 +127,121 @@ Task Manager App is a Flutter application designed to help users manage their ta
 ```
 lib/
   |- core/
-  |  |-services/
+  |  |- services/
   |  |  |- api_service.dart
-  |  |  
-  |  |- themes/
-  |  |  |- app_text_themes.dart
-  |  |  
-  |  |- validators/
-  |  |  |- validation.dart
-  |  |  
-  |  |- utils/
-  |  |  |- logger.dart
-  |  |
-  |  |- di/
-  |  |  |- service_locator.dart
-  |  |
-  |  |- constants/
-  |  |  |- app_images.dart
-  |  |  |- app_strings.dart
-  |  |  |- app_constants.dart
-  |  |  |- app_enums.dart
-  |  |  |- app_colors.dart
-  |  |  |- api_constants.dart
+  |
+  |- themes/
+  |  |- app_text_themes.dart
+  |
+  |- validators/
+  |  |- validation.dart
+  |
+  |- utils/
+  |  |- logger.dart
+  |
+  |- di/
+  |  |- service_locator.dart
+  |
+  |- constants/
+  |  |- app_images.dart
+  |  |- app_strings.dart
+  |  |- app_constants.dart
+  |  |- app_enums.dart
+  |  |- app_colors.dart
+  |  |- api_constants.dart
   |
   |- features/
   |  |- authentication/
-  |  |  |- views/
-  |  |  |- view_models/
-  |  |  |- widgets/
-  |  |  |- logic/
-  |  |  |  |- cubits/
+  |  |  |- presentation/
+  |  |  |  |- views/
+  |  |  |  |- view_models/
+  |  |  |  |- widgets/
+  |  |  |  |- manager/
+  |  |  |  |  |- cubits/
+  |  |  |- domain/
+  |  |  |  |- use_cases/
+  |  |  |  |- entities/
   |  |  |- data/
   |  |  |  |- repos/
   |  |  |  |- models/
-  |  |
+  |
   |  |- task_management/
-  |  |  |- views/
-  |  |  |- view_models/
-  |  |  |- widgets/
-  |  |  |- logic/
-  |  |  |  |- cubits/
+  |  |  |- presentation/
+  |  |  |  |- views/
+  |  |  |  |- view_models/
+  |  |  |  |- widgets/
+  |  |  |  |- manager/
+  |  |  |  |  |- cubits/
+  |  |  |- domain/
+  |  |  |  |- use_cases/
+  |  |  |  |- entities/
   |  |  |- data/
   |  |  |  |- repos/
   |  |  |  |- models/
-  |  |
+  |
   |  |- settings/
-  |  |  |- views/
-  |  |  |- view_models/
-  |  |  |- widgets/
-  |  |  |- logic/
-  |  |  |  |- cubits/
+  |  |  |- presentation/
+  |  |  |  |- views/
+  |  |  |  |- view_models/
+  |  |  |  |- widgets/
+  |  |  |  |- manager/
+  |  |  |  |  |- cubits/
+  |  |  |- domain/
+  |  |  |  |- use_cases/
+  |  |  |  |- entities/
   |  |  |- data/
   |  |  |  |- repos/
   |  |  |  |- models/
-  |  |
+  |
   |  |- notifications/
-  |  |  |- views/
-  |  |  |- view_models/
-  |  |  |- widgets/
-  |  |  |- logic/
-  |  |  |  |- cubits/
+  |  |  |- presentation/
+  |  |  |  |- views/
+  |  |  |  |- view_models/
+  |  |  |  |- widgets/
+  |  |  |  |- manager/
+  |  |  |  |  |- cubits/
+  |  |  |- domain/
+  |  |  |  |- use_cases/
+  |  |  |  |- entities/
   |  |  |- data/
   |  |  |  |- repos/
   |  |  |  |- models/
-  |  |
+  |
   |  |- onboarding/
-  |  |  |- views/
-  |  |  |- view_models/
-  |  |  |- widgets/
-  |  |  |- logic/
-  |  |  |  |- cubits/
+  |  |  |- presentation/
+  |  |  |  |- views/
+  |  |  |  |- view_models/
+  |  |  |  |- widgets/
+  |  |  |  |- manager/
+  |  |  |  |  |- cubits/
+  |  |  |- domain/
+  |  |  |  |- use_cases/
+  |  |  |  |- entities/
+  |  |  |- data/
+  |  |  |  |- repos/
+  |  |  |  |- models/
   |
   |- task_manager_app.dart
   |- main_production.dart
   |- main_development.dart
 ```
 
-## Evaluation Criteria
+## Contributing
 
-Candidates will be evaluated based on:
+We welcome contributions to the Task Manager App! If you would like to contribute, please follow these guidelines:
 
-- Adherence to Flutter best practices and coding standards.
-- Effective implementation of state management.
-- Performance optimization and smooth UI interactions.
-- Proper handling of local storage for data persistence.
-- Coverage and quality of unit tests.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
 
-## Submission
+## License
 
-Candidates are required to submit their completed Flutter project within 3 days on a version control platform like GitHub. Include clear instructions for building and running the app. Additionally, provide a brief README outlining design decisions, challenges faced, and any additional features implemented.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Contact
+
+If you have any questions or suggestions, feel free to open an issue or contact us directly.
+
+Happy coding!

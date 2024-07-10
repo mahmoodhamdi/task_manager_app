@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:task_manager_app/core/constants/app_colors.dart';
 import 'package:task_manager_app/core/themes/app_text_themes.dart';
-import 'package:task_manager_app/features/calender/ui/views/calender_view.dart';
-import 'package:task_manager_app/features/focus/ui/views/focus_view.dart';
-import 'package:task_manager_app/features/home/logic/navigation/navigation_cubit.dart';
-import 'package:task_manager_app/features/home/ui/widgets/add_note_bottom_sheet.dart';
-import 'package:task_manager_app/features/index/ui/views/index_view.dart';
-import 'package:task_manager_app/features/profile/ui/views/profile_view.dart';
+import 'package:task_manager_app/features/calender/presentation/views/calender_view.dart';
+import 'package:task_manager_app/features/focus/presentation/views/focus_view.dart';
+import 'package:task_manager_app/features/home/presentation/manager/logic/navigation/navigation_cubit.dart';
+import 'package:task_manager_app/features/home/presentation/widgets/add_note_bottom_sheet.dart';
+import 'package:task_manager_app/features/index/presentation/views/index_view.dart';
+import 'package:task_manager_app/features/profile/presentation/views/profile_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key, this.user});
