@@ -8,7 +8,7 @@ import 'package:task_manager_app/core/errors/platform_exceptions.dart';
 import 'package:task_manager_app/core/utils/logger.dart';
 import 'package:task_manager_app/features/authentication/data/models/register_with_email_and_password_request_body.dart';
 import 'package:task_manager_app/features/authentication/data/repos/auth_repo.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/registerwithemailandpassword/registerwithemailandpassword_state.dart';
+import 'package:task_manager_app/features/authentication/presentation/manager/cubits/registerwithemailandpassword/registerwithemailandpassword_state.dart';
 
 class RegisterWithEmailAndPasswordCubit
     extends Cubit<RegisterWithEmailAndPasswordState> {

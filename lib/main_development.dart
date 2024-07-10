@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/core/di/service_locator.dart';
+import 'package:task_manager_app/core/routes/routes.dart';
 import 'package:task_manager_app/task_manager_app.dart';
 
 void main() async {
@@ -14,7 +15,9 @@ void main() async {
   runApp(DevicePreview(
       enabled: kReleaseMode,
       builder: (context) {
-        return const TaskManagerApp();
+        return const TaskManagerApp(
+          initialRoute: Routes.onboarding,
+        );
       }));
 }
 

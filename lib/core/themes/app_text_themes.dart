@@ -39,21 +39,6 @@ class AppTextThemes {
       fontWeight: FontWeightHelper.regular,
       color: AppColors.whiteWithOpacity);
 
-// font14GreyRegular
-
-  //font12WhiteRegular
-  static TextStyle font12WhiteRegularWithStyle = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: AppColors.white.withOpacity(0.87),
-  ); //font12WhiteRegular
-  static TextStyle font20WhiteRegularWithStyle = TextStyle(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: AppColors.white.withOpacity(0.87),
-  );
-  //font12WhiteRegular
-
   static TextStyle font16GreyRegular = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,

@@ -5,7 +5,7 @@ import 'package:task_manager_app/core/errors/firebase_exceptions.dart';
 import 'package:task_manager_app/core/errors/platform_exceptions.dart';
 import 'package:task_manager_app/core/utils/logger.dart';
 import 'package:task_manager_app/features/authentication/data/repos/auth_repo.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/user/user_state.dart';
+import 'package:task_manager_app/features/authentication/presentation/manager/cubits/user/user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
   UserCubit(this._authRepo) : super(UserInitial());
