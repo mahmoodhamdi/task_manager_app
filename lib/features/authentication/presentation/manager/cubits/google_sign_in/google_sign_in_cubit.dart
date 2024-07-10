@@ -6,7 +6,7 @@ import 'package:task_manager_app/core/errors/firebase_exceptions.dart';
 import 'package:task_manager_app/core/errors/platform_exceptions.dart';
 import 'package:task_manager_app/core/utils/logger.dart';
 import 'package:task_manager_app/features/authentication/data/repos/auth_repo.dart';
-import 'package:task_manager_app/features/authentication/logic/cubits/google_sign_in/google_sign_in_state.dart';
+import 'package:task_manager_app/features/authentication/presentation/manager/cubits/google_sign_in/google_sign_in_state.dart';
 
 class GoogleSignInCubit extends Cubit<GoogleSignInState> {
   final AuthRepo _authRepo = GetIt.instance<AuthRepo>();
