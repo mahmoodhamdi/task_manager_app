@@ -1,7 +1,7 @@
 # Task Manager App
 
 Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently and collaboratively. The app includes robust features such as user authentication, task CRUD operations, real-time updates across devices, calendar integration, and comprehensive state management. It is designed to be free and ad-free, ensuring a seamless user experience without distractions.
-
+"The app is currently in progress and not complete yet."
 ## 🌟 Features Overview
 
 - [x] 🔄 **CI/CD Setup**  
