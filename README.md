@@ -1,6 +1,7 @@
 # Task Manager App
 
 Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently and collaboratively. The app includes robust features such as user authentication, task CRUD operations, real-time updates across devices, calendar integration, and comprehensive state management. It is designed to be free and ad-free, ensuring a seamless user experience without distractions.
+"The app is currently in progress and not complete yet."
 
 ## 🌟 Features Overview
 
@@ -64,7 +65,7 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [x] User authentication using Google.
 - [ ] User authentication using Apple.
 - [ ] User authentication using Microsoft.
-- [ ] User authentication using Facebook.
+- [ ] **Two-Factor Authentication**: Enhance security with two-factor authentication.
 
 ### Task Management
 
@@ -78,6 +79,7 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [ ] **Add Tasks**: Add new tasks to the list.
 - [ ] **Task Details**: View and edit task details.
 - [ ] **Task Filters**: Filter tasks by date, category, and status.
+- [ ] **Bulk Actions**: Perform bulk actions on multiple tasks, such as marking them as complete or deleting them.
 
 ### Pagination
 
@@ -87,7 +89,7 @@ Task Manager App is an open-source Flutter application designed to help users ma
 
 ### State Management
 
-- [ ] State management implemented using Provider/Bloc/Redux.
+- [ ] State management implemented using Bloc.
 - [ ] Centralized state management for consistency.
 - [ ] Real-time state updates.
 
@@ -212,6 +214,17 @@ Task Manager App is an open-source Flutter application designed to help users ma
 - [ ] **Text Size**: Adjust text size for better readability.
 - [ ] **High Contrast Mode**: Enable high contrast mode for better visibility.
 - [ ] **Screen Reader Support**: Support screen readers for visually impaired users.
+
+### Additional Key Features
+
+- [ ] **Access and Manage Tasks Offline**: Access and manage tasks offline with automatic sync when reconnected.
+- [ ] **Performance Optimization**: Optimize app performance for quick loading times and smooth operation.
+- [ ] **Data Export and Import**:
+  - [ ] **Data Import**: Import tasks from CSV, Excel, or other task management tools.
+  - [ ] **Data Export**: Export tasks and reports to various formats (CSV, Excel, PDF).
+- [ ] **Voice Notes**: Record and attach voice notes to tasks.
+- [ ] **Two-Factor Authentication**: Enhance security with two-factor authentication.
+- [ ] **Bulk Actions**: Perform bulk actions on multiple tasks, such as marking them as complete or deleting them.
 
 ## Contributing
 
