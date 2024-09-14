@@ -1,243 +1,189 @@
 # Task Manager App
 
-Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently and collaboratively. The app includes robust features such as user authentication, task CRUD operations, real-time updates across devices, calendar integration, and comprehensive state management. It is designed to be free and ad-free, ensuring a seamless user experience without distractions.
-"The app is currently in progress and not complete yet."
+Task Manager App is an open-source Flutter application designed to help users manage their tasks efficiently and collaboratively. The app includes robust features such as user authentication, task management, real-time updates across devices, calendar integration, and state management. It is designed to be free and ad-free, ensuring a seamless user e perience without distractions.
 
 ## 🌟 Features Overview
 
-- [x] 🔄 **CI/CD Setup**  
-      Integrated CI/CD pipeline using GitHub Actions and Fastlane for automated builds and deployments.
+### ✅ User Features
+
+- [ ] **User Authentication**
+  - [ ] Sign up, login, logout (Email/Password, Google, Firebase)
+  - [ ] Two-Factor Authentication
+  - [ ] Profile management
+  - [ ] Social logins (Apple, Microsoft)
+  
+- [ ] **Task Management**
+  - [ ] Task creation, reading, updating, deleting (CRUD)
+  - [ ] Task prioritization (High, Medium, Low)
+  - [ ] Task categorization (Work, Personal, etc.)
+  - [ ] Subtasks management
+  - [ ] Task due dates and reminders
+  - [ ] Task status tracking (To Do, In Progress, Done)
+  - [ ] Bulk actions on tasks (complete, delete)
+  
+- [ ] **Search and Filter**
+  - [ ] Search tasks by keyword
+  - [ ] Filter tasks by date, category, and status
+  - [ ] Sort tasks by due date, priority, etc.
+
+- [ ] **Real-Time Updates**
+  - [ ] Sync tasks in real-time across devices
+  - [ ] Real-time task collaboration
+
+- [ ] **Notifications**
+  - [ ] Push notifications for task reminders
+  - [ ] In-app notifications
+  - [ ] Email notifications for task updates
+
+- [ ] **Calendar Integration**
+  - [ ] Sync tasks with Google Calendar/Outlook
+  - [ ] Calendar view for task management
+
+- [ ] **Time Tracking**
+  - [ ] Pomodoro timer for focused task work
+  - [ ] Log time spent on tasks
+  - [ ] Generate time reports for tasks
+  
+- [ ] **Onboarding**
+  - [ ] Interactive onboarding for new users
+  - [ ] Step-by-step guide through key app features
+  
+- [ ] **Settings**
+  - [ ] Theme customization (Light/Dark mode)
+  - [ ] Manage notification preferences
+  - [ ] Account management (Change password, update profile)
+
+- [ ] **Advanced Analytics**
+  - [ ] Insights into task completion and productivity trends
+  - [ ] Reports on task performance
+
+- [ ] **Creator Features**
+  - [ ] Schedule and post to LinkedIn directly from the app
+  - [ ] Publish videos or updates to YouTube
+  - [ ] Task-related analytics (likes, comments, views, etc.)
+
+- [ ] **Collaboration**
+  - [ ] Assign tasks to team members
+  - [ ] Add comments to tasks for discussion
+  - [ ] Real-time collaboration and updates on tasks
+
+- [ ] **Profile Management**
+  - [ ] View and update user profile information
+  - [ ] Change password
+  - [ ] Customize avatar and profile settings
+  
+- [ ] **Error/Message Handling**
+  - [ ] Error messages for failed actions
+  - [ ] Confirmation dialogs for critical actions
+
+- [ ] **Multi-language Support**
+  - [ ] Language selection for the app
+  - [ ] Localized content for different regions
+
+- [ ] **Accessibility Settings**
+  - [ ] Text size adjustments for readability
+  - [ ] High contrast mode for improved visibility
+  - [ ] Screen reader support for visually impaired users
+
+- [ ] **Offline Access**
+  - [ ] Access and manage tasks offline
+  - [ ] Sync automatically when reconnected
+  
+- [ ] **Data Backup and Restore**
+  - [ ] Cloud backup of user data and tasks
+  - [ ] Restore tasks and settings from backup
+  
+- [ ] **Dark Mode**
+  - [ ] Enable Dark Mode
+  - [ ] Schedule Dark Mode automatically based on time of day
+  
+---
+
+### 🔧 Dev Features
+
+- [ ] **CI/CD Setup**
+  - [ ] GitHub Actions for automated build and test pipelines
+  - [ ] Fastlane integration for automated deployments
+
+- [ ] **Flavors**
+  - [ ] Separate app environments for Development and Production
 
-- [x] 🎨 **Flavors**  
-      Utilizes flavors to manage different environments such as Development and Production.
+- [ ] **State Management**
+  - [ ] Bloc for centralized state management
+  - [ ] Real-time state updates across the app
 
-- [x] 🔑 **User Authentication**  
-      Secure user login using Username and Password, and various authentication methods including Firebase and Google.
+- [ ] **Database Management**
+  - [ ] Cloud database (e.g., Firebase Firestore, Supabase) for storing tasks
+  - [ ] Local storage (SQLite/Shared Preferences) for offline persistence
 
-- [ ] ✏️ **Task Management**  
-      Create, read, update, and delete tasks seamlessly.
+- [ ] **Real-Time Database**
+  - [ ] Sync data in real-time between devices
 
-- [ ] 🔄 **Pagination**  
-      Efficiently fetch tasks using pagination.
+- [ ] **Pagination**
+  - [ ] Efficient task fetching via pagination
+  - [ ] Lazy loading and infinite scrolling
 
-- [ ] 🔄 **State Management**  
-      Implemented using Bloc for optimal performance.
+- [ ] **Cloud Functions**
+  - [ ] Serverless backend logic for automation (e.g., scheduling posts, notifications)
 
-- [ ] 💾 **Local Storage**  
-      Persist tasks locally using shared preferences or SQLite.
+- [ ] **Push Notifications Integration**
+  - [ ] FCM (Firebase Cloud Messaging) for push notifications
+  - [ ] Support for local notifications
 
-- [ ] 🧪 **Unit Tests**  
-      Comprehensive tests covering critical functionalities.
+- [ ] **API Integrations**
+  - [ ] OAuth2 integration for third-party services (LinkedIn, YouTube)
+  - [ ] Google Calendar API integration for syncing tasks
 
-- [ ] ⚙️ **Settings**  
-      Manage user preferences and application settings.
+- [ ] **Unit Testing**
+  - [ ] Unit tests for key functionality
+  - [ ] Continuous integration with test coverage reporting
 
-- [ ] 📩 **Notifications**  
-      Handle notifications and alerts for users.
+- [ ] **Cloud Storage**
+  - [ ] Store and retrieve media (task attachments, videos) from cloud storage
 
-- [x] 📝 **Onboarding**  
-      Guide users through the app features with an interactive onboarding experience.
+- [ ] **Analytics Backend**
+  - [ ] Integration with Firebase Analytics for tracking user behavior
 
-- [ ] 🔗 **Calendar Integration**  
-      Link tasks to calendars for better schedule management.
+- [ ] **Error Handling and Logging**
+  - [ ] Centralized error handling using Sentry/Firebase Crashlytics
+  - [ ] Activity logging for debugging and monitoring
 
-- [ ] 🔄 **Real-Time Updates**  
-      Sync tasks in real-time across multiple devices.
+- [ ] **Multi-Platform Support**
+  - [ ] Optimized builds for Android and iOS platforms
 
-- [ ] 📊 **Advanced Analytics**  
-      Provide insights and analytics on task completion and productivity.
+- [ ] **Custom Widgets**
+  - [ ] Home screen widgets for quick task view or reminders
 
-## Key Features
+- [ ] **Localization Tools**
+  - [ ] Tools to manage multiple languages
 
-### CI/CD Setup
+- [ ] **Data Import/E port**
+  - [ ] Import tasks from CSV/Excel
+  - [ ] Export reports and tasks to formats like CSV, Excel, PDF
 
-- [x] **GitHub Actions**: Automates continuous integration and deployment pipelines.
-- [x] **Fastlane Integration**: Automates build, testing, and release processes for different environments.
-- [x] **Flavors**: Configures distinct app variants for various deployment environments.
+- [ ] **Performance Optimization**
+  - [ ] Caching, lazy loading, and memory management optimizations
 
-### User Authentication
+- [ ] **DevOps Features**
+  - [ ] Scheduled cloud backups
+  - [ ] Regular performance monitoring and optimization
 
-- [x] User registration using email and password.
-- [x] User login using email and password.
-- [ ] User logout.
-- [ ] User profile management.
-- [x] User authentication using Firebase.
-- [x] User authentication using Google.
-- [ ] User authentication using Apple.
-- [ ] User authentication using Microsoft.
-- [ ] **Two-Factor Authentication**: Enhance security with two-factor authentication.
+---
 
-### Task Management
+## 🛠 Contributing
 
-- [ ] CRUD operations for tasks (Create, Read, Update, Delete).
-- [ ] Task prioritization (High, Medium, Low).
-- [ ] Task categorization.
-- [ ] Subtasks management.
-- [ ] Task due dates and reminders.
-- [ ] Task status tracking (To Do, In Progress, Done).
-- [ ] **View Tasks**: Display a list of tasks with options to edit and delete.
-- [ ] **Add Tasks**: Add new tasks to the list.
-- [ ] **Task Details**: View and edit task details.
-- [ ] **Task Filters**: Filter tasks by date, category, and status.
-- [ ] **Bulk Actions**: Perform bulk actions on multiple tasks, such as marking them as complete or deleting them.
+We welcome contributions to the **Task Manager App**! Please follow these guidelines for contributing:
 
-### Pagination
+1. **Fork the repository**
+2. **Create a new branch**: `git checkout -b feature-branch`
+3. **Make your changes** and commit: `git commit -m 'Add some feature'`
+4. **Push to the branch**: `git push origin feature-branch`
+5. **Create a Pull Request**: We'll review and merge the changes
 
-- [ ] Efficiently fetch tasks in batches using pagination.
-- [ ] Scrollable task list with lazy loading.
-- [ ] Infinite scrolling.
+---
 
-### State Management
+## 📩 Contact
 
-- [ ] State management implemented using Bloc.
-- [ ] Centralized state management for consistency.
-- [ ] Real-time state updates.
+If you have any questions or suggestions, feel free to open an issue or contact us directly. We're always open to feedback and improvements!
 
-### Local Storage
-
-- [ ] Persist tasks locally using Flutter's shared preferences or SQLite.
-- [ ] Offline access to tasks.
-- [ ] Synchronization with cloud storage.
-
-### Unit Tests
-
-- [ ] Comprehensive unit tests ensuring app functionality and stability.
-- [ ] Mocking and stubbing for isolated tests.
-- [ ] Continuous integration with test coverage reporting.
-
-### Settings
-
-- [ ] **Manage user preferences and application settings.**
-- [ ] Theme customization (Light/Dark mode).
-- [ ] Notification preferences.
-- [ ] Account management.
-
-### Notifications
-
-- [ ] **Handle notifications and alerts for users.**
-- [ ] Push notifications for task reminders.
-- [ ] In-app notifications for real-time updates.
-- [ ] Email notifications.
-
-### Onboarding
-
-- [x] **Interactive Onboarding**: Guide users through the app features with an engaging and informative onboarding experience.
-- [x] **Page View and Dots Indicator**: Smooth transitions and visual indicators for better user orientation during onboarding.
-
-### Calendar Integration
-
-- [ ] **Link to Calendars**: Sync tasks with Google Calendar, Outlook, and other calendar apps for seamless schedule management.
-- [ ] **Calendar View**: View tasks in a calendar format.
-
-### Real-Time Updates
-
-- [ ] **Multi-Device Sync**: Sync tasks in real-time across multiple devices.
-- [ ] **Collaborative Tasks**: Real-time collaboration on tasks with multiple users.
-
-### Advanced Analytics
-
-- [ ] **Productivity Insights**: Detailed analytics on task completion and productivity trends.
-- [ ] **Reports**: Generate reports on task performance over time.
-
-### Search and Filter
-
-- [ ] **Search Tasks**: Search for tasks using keywords.
-- [ ] **Filter Tasks**: Apply filters to narrow down tasks by date, category, and status.
-- [ ] **Sort Tasks**: Sort tasks by different criteria.
-
-### Collaboration
-
-- [ ] **Assign Tasks**: Assign tasks to team members.
-- [ ] **Comments**: Add and view comments on tasks.
-- [ ] **Real-Time Collaboration**: Collaborate on tasks with real-time updates.
-
-### Time Tracking
-
-- [ ] **Pomodoro Timer**: Use a Pomodoro timer to manage time spent on tasks.
-- [ ] **Log Time**: Record the time spent on tasks.
-- [ ] **Time Reports**: Generate reports on time spent on tasks.
-
-### Integration with Other Services
-
-- [ ] **Project Management Tools**: Sync tasks with tools like Trello and Asana.
-- [ ] **Note-Taking Integration**: Integrate with Evernote and OneNote for task notes.
-- [ ] **Communication Tools**: Connect with Slack and Microsoft Teams for task updates.
-
-### Themes and Customization
-
-- [ ] **Custom Themes**: Customize the app theme and color scheme.
-- [ ] **Home Screen Widgets**: Add widgets to the home screen.
-- [ ] **Custom Task Views**: Choose different views such as list, Kanban, and calendar.
-
-### Analytics and Reporting
-
-- [ ] **Generate Reports**: Create reports on task completion, time tracking, and productivity metrics.
-- [ ] **Export Reports**: Export reports in formats such as PDF and Excel.
-- [ ] **Productivity Insights**: Get recommendations based on task performance.
-
-### Profile Management
-
-- [ ] **User Profile**: View and update user profile information.
-- [ ] **Change Password**: Update user password.
-- [ ] **Account Settings**: Manage account-related settings.
-
-### Error/Message Dialog
-
-- [ ] **Error Handling**: Display error messages for failed actions.
-- [ ] **Confirmation Dialogs**: Show confirmation dialogs for critical actions.
-- [ ] **Info Messages**: Provide informational messages to users.
-
-### Data Backup and Restore
-
-- [ ] **Backup Data**: Backup user data to cloud storage.
-- [ ] **Restore Data**: Restore data from backups.
-- [ ] **Scheduled Backups**: Schedule regular backups.
-
-### User Activity Log
-
-- [ ] **View Activity Log**: Display a log of user activities.
-- [ ] **Filter Activities**: Filter activities by date and type.
-- [ ] **Export Log**: Export activity logs for review.
-
-### Multi-language Support
-
-- [ ] **Language Selection**: Choose from multiple languages for the app interface.
-- [ ] **Localized Content**: Provide content in the selected language.
-
-### Dark Mode
-
-- [ ] **Enable Dark Mode**: Switch to dark mode for better visibility in low light.
-- [ ] **Schedule Dark Mode**: Automatically switch to dark mode based on the time of day.
-
-### Accessibility Settings
-
-- [ ] **Text Size**: Adjust text size for better readability.
-- [ ] **High Contrast Mode**: Enable high contrast mode for better visibility.
-- [ ] **Screen Reader Support**: Support screen readers for visually impaired users.
-
-### Additional Key Features
-
-- [ ] **Access and Manage Tasks Offline**: Access and manage tasks offline with automatic sync when reconnected.
-- [ ] **Performance Optimization**: Optimize app performance for quick loading times and smooth operation.
-- [ ] **Data Export and Import**:
-  - [ ] **Data Import**: Import tasks from CSV, Excel, or other task management tools.
-  - [ ] **Data Export**: Export tasks and reports to various formats (CSV, Excel, PDF).
-- [ ] **Voice Notes**: Record and attach voice notes to tasks.
-- [ ] **Two-Factor Authentication**: Enhance security with two-factor authentication.
-- [ ] **Bulk Actions**: Perform bulk actions on multiple tasks, such as marking them as complete or deleting them.
-
-## Contributing
-
-We welcome contributions to the Task Manager App! If you would like to contribute, please follow these guidelines:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a new Pull Request.
-
-## Contact
-
-If you have any questions or suggestions, feel free to open an issue or contact us directly.
-
-Happy coding!
+Happy coding! 🎉
